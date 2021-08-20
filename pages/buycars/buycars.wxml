@@ -1,0 +1,241 @@
+<!--pages/buycars/buycars.wxml-->
+<import src="../../template/nav.wxml" />
+<view class="topbg">
+  <view class="img">
+    <image src="../../images/buycarbg.jpg" mode="aspectFill"></image>
+  </view>
+</view>
+
+<view class="buycarCon">
+  <view class="location">
+    <picker bindchange="bindPickerChange" value="{{index}}" range="{{areaName}}">
+      <view class="picker">
+        车辆位置: {{areaName[index]}}
+      </view>
+    </picker>
+  </view>
+
+  <view class="brandchosse">
+    <text bindtap="oneDialog">车辆信息:{{brandInfo}}----{{carSerise}}------{{carModel}}</text>
+  </view>
+
+  <picker mode="date" value="{{date}}" start="2015-09-01" end="9999-09-01" bindchange="bindDateChange">
+    <view class="picker">
+      上牌时间: {{date}}
+    </view>
+  </picker>
+  <form bindsubmit="formSubmit">
+    <view class="name">
+      <view class="inputText">联系姓名:</view>
+      <input type="text" name="concat"></input>
+    </view>
+
+    <view class="name">
+      <view class="inputText">联系电话:</view>
+      <input type="number" name="phone"></input>
+    </view>
+    <button class="submit" formType="submit">立即预约</button>
+  </form>
+  <!-- tips -->
+  <view class="tips">
+    <view class="ul">
+      <view class="li">
+        <view class="h3">保证爱车最大价值</view>
+        <view class="p">通过国际二手车“行”认证鉴定标准及车行家CIAS专业鉴定流程，让您的车况明明白白，保证您爱车的最大价值。</view>
+      </view>
+      <view class="li">
+        <view class="h3">一站式体验让您轻松买车</view>
+        <view class="p">车行家帮您找卖家、过户、打款、为您解决所有关于买家的问题让您足不出户便可轻松卖车。</view>
+      </view>
+      <view class="li">
+        <view class="h3">多种卖车途径更快更高效</view>
+        <view class="p">车行家能让您最短时间卖出最好的价格，只要您再车行家平台卖车我们就能帮您找到最合适您的卖车方式。</view>
+      </view>
+    </view>
+  </view>
+</view>
+
+
+
+
+
+
+
+
+
+
+<view class="zan-dialog {{ showDialog ? 'zan-dialog--show' : '' }}">
+  <view class="zan-dialog__mask" bindtap="oneDialog" />
+  <view class="zan-dialog__container">
+    <view class='choose'>
+      <view class="chooseTit">
+       选择品牌</view>
+      <view class="Letter">
+        <view class="li hot" data-index="hot" catchtap="goToNode">热</view>
+        <block wx:for="{{brandAlphabets}}">
+          <view class="li " data-index="{{item.alphabet}}" catchtap="goToNode" wx:if="{{item.alphabet!='hot'}}">{{item.alphabet}}</view>
+        </block>
+      </view>
+
+      <scroll-view class="chooseContent" scroll-into-view="{{intoindex}}" scroll-y>
+        <!-- 字母筛选 -->
+
+
+        <view class="hotbrand" id="hot">
+          <view class="brandtitle">热门品牌</view>
+          <view class="hotbrandCon">
+            <view class="ul">
+              <view class="li" bindtap="twoDialog" data-brandName="奥迪">
+                <view class="ico">
+                  <image src="https://p6-dcd.byteimg.com/img/mosaic-legacy/1dd5000048d6334c26b4~tplv-resize:100:0.png"></image>
+                </view>
+                <view class="text">奥迪</view>
+              </view>
+              <view class="li" bindtap="twoDialog" data-brandName="奔驰">
+                <view class="ico">
+                  <image src="https://p6-dcd.byteimg.com/img/mosaic-legacy/1dd50000190229abeec8~tplv-resize:100:0.png"></image>
+                </view>
+                <view class="text">奔驰</view>
+              </view>
+              <view class="li" bindtap="twoDialog" data-brandName="本田">
+                <view class="ico">
+                  <image src="https://p3-dcd.byteimg.com/img/mosaic-legacy/1dd5000018fc7c108922~tplv-resize:100:0.png"></image>
+                </view>
+                <view class="text">本田</view>
+              </view>
+              <view class="li" bindtap="twoDialog" data-brandName="长城">
+                <view class="ico">
+                  <image src="https://p3-dcd.byteimg.com/img/mosaic-legacy/1dd5000018efd5725196~tplv-resize:100:0.png"></image>
+                </view>
+                <view class="text">长城</view>
+              </view>
+              <view class="li" bindtap="twoDialog" data-brandName="大众">
+                <view class="ico">
+                  <image src="https://p1-dcd.byteimg.com/img/motor-img/343173efb2ab28cda1b0e5a5b49dab8e~tplv-resize:100:0.png"></image>
+                </view>
+                <view class="text">大众</view>
+              </view>
+              <view class="li" bindtap="twoDialog" data-brandName="宝马">
+                <view class="ico">
+                  <image src="https://p1-dcd.byteimg.com/img/motor-img/4867710a834bd648ba55797ba5e37f14~tplv-resize:100:0.png"></image>
+                </view>
+                <view class="text">宝马</view>
+              </view>
+              <view class="li" bindtap="twoDialog" data-brandName="丰田">
+                <view class="ico">
+                  <image src="https://p1-dcd.byteimg.com/img/motor-img/c8eb9d15ac7e99904711b5ffe5538777~tplv-resize:100:0.png"></image>
+                </view>
+                <view class="text">丰田</view>
+              </view>
+              <view class="li" bindtap="twoDialog" data-brandName="福特">
+                <view class="ico">
+                  <image src="https://p1-dcd.byteimg.com/img/mosaic-legacy/1dd50000190c8e84e016~tplv-resize:100:0.png"></image>
+                </view>
+                <view class="text">福特</view>
+              </view>
+              <view class="li" bindtap="twoDialog" data-brandName="日产">
+                <view class="ico">
+                  <image src="https://p1-dcd.byteimg.com/img/mosaic-legacy/1dd5000019779bf8dfb2~tplv-resize:100:0.png"></image>
+                </view>
+                <view class="text">日产</view>
+              </view>
+              <view class="li" bindtap="twoDialog" data-brandName="雪佛兰">
+                <view class="ico">
+                  <image src="https://p9-dcd.byteimg.com/img/mosaic-legacy/1dd50000196a38ee3f43~tplv-resize:100:0.png"></image>
+                </view>
+                <view class="text">雪佛兰</view>
+              </view>
+            </view>
+          </view>
+        </view>
+
+        <view class="allbrand">
+
+          <!-- 全部品牌 -->
+          <view class="brandContent">
+            <block wx:for="{{brandAlphabets}}">
+              <view class="title" wx:if="{{item.alphabet!='hot'}}">{{item.alphabet}}</view>
+              <view class="brandCon" id="{{item.alphabet}}">
+                <view class="ul">
+                  <block wx:for="{{brandLists[item.alphabet]}}">
+                    <view class="li" bindtap="twoDialog" data-brandName="{{item.brandName}}">
+                      <view class="img">
+                        <image src="{{item.brandLogo}}"></image>
+                      </view>
+                      <text>{{item.brandName}}</text>
+                    </view>
+                  </block>
+                </view>
+              </view>
+            </block>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+</view>
+
+
+
+<!-- 二级弹出 -->
+<view class="zan-dialog {{ two ? 'zan-dialog--show' : '' }}">
+  <view class="zan-dialog__mask" bindtap="two" />
+  <view class="zan-dialog__container">
+    <view class='choose'>
+      <view class="chooseTit">
+        选择车型</view>
+      <view class="chooseContent">
+        <view class="allbrand">
+          <!-- 全部品牌 -->
+          <view class="brandContent">
+            <view class="brandCon">
+              <view class="ul">
+                <block wx:for="{{serises}}">
+                  <view class="li" data-serise="{{item}}" bindtap="threeDialog">
+                    <text>{{item}}</text>
+                  </view>
+                </block>
+              </view>
+            </view>
+
+          </view>
+        </view>
+
+      </view>
+    </view>
+  </view>
+</view>
+
+
+<!-- 三级选择 -->
+<!-- 二级弹出 -->
+<view class="zan-dialog {{ three ? 'zan-dialog--show' : '' }}">
+  <view class="zan-dialog__mask" bindtap="three" />
+  <view class="zan-dialog__container">
+    <view class='choose'>
+      <view class="chooseTit">
+        选择车型</view>
+      <view class="chooseContent">
+        <view class="allbrand">
+          <!-- 全部品牌 -->
+          <view class="brandContent">
+            <view class="brandCon">
+              <view class="ul">
+                <block wx:for="{{models}}">
+                  <view class="li" data-model="{{item}}" bindtap="compelete">
+                    <text>{{item}}</text>
+                  </view>
+                </block>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="flex fix_nav_wp">
+    <block wx:for="{{navData}}">
+      <template is="FooterNav" data="{{...item}}" />
+    </block>
+  </view>
+</view>

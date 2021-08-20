@@ -1,0 +1,15 @@
+/* pages/all/all.wxss */
+.all .title{
+  display: inline-block;
+  padding: 0.5em 0em;
+  color: #000;
+  background: none;
+  border-bottom: 1px solid #76919c;
+}
+.all .title image{
+  width: 1em;
+  height: 1em;
+  vertical-align: middle;
+  position: relative;
+  top: -0.05em;
+}

@@ -1,0 +1,46 @@
+<!--pages/carinput/carinput.wxml-->
+<view class="carinput">
+
+<view class="carinputContent">
+  <view class="ul">
+    <block wx:for="{{arr}}">
+      <view class="li">
+          <text class="item left">{{item.content}}</text>
+          <view class="item right">
+            <view bindtap="chooseImg"  class="upload"> 上传 <image src="/images/my/jia.png"></image></view>
+            <view class='pic' wx:for="{{imgs}}" wx:for-item="item" wx:key="*this">
+                <image class='weui-uploader__img 'src="{{item}}" data-index="{{index}}" mode="aspectFill" bindtap="previewImg"> </image>
+                <!-- <icon type='cancel' class="delete-btn" data-index="{{index}}" catchtap="deleteImg"></icon> -->
+                <text class="delete-btn" data-index="{{index}}" catchtap="deleteImg">×</text>
+            </view>
+          </view>
+      </view>
+    </block>
+  </view>
+
+
+
+</view>
+
+<view class="btn">
+<navigator url="/pages/carinput2/carinput2">下一步</navigator>
+</view>
+
+</view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

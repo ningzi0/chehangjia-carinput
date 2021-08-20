@@ -1,0 +1,15 @@
+<!--pages/nav/nav.wxml-->
+<template name="FooterNav">
+  <view class="nav" bindtap="{{fn}}">
+    <view class="defalut_btn">
+      <block wx:if="{{current == 0}}">
+        <image src='{{image}}' />
+        <text class="txt">{{name}}</text>
+      </block>
+      <block wx:if="{{current == 1}}">
+        <image src='{{actvie_image}}' class="active_image"/>
+        <text class="active_txt">{{name}}</text>
+      </block>
+    </view>
+  </view>
+</template>

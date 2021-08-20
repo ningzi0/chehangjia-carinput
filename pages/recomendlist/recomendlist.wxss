@@ -1,0 +1,451 @@
+/* pages/list/list.wxss */
+
+.search {
+  padding: 0.5em 1em;
+  position: relative;
+}
+
+.search input {
+  background-color: #76919c20;
+  padding: 0.75em 0.75em 0.75em 3.5em;
+  font-size: 0.8em;
+  border-radius: 5em;
+}
+
+.search image {
+  width: 1em;
+  height: 1em;
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  transform: translate(0, -50%);
+}
+
+.screen .ul {
+  display: flex;
+  font-size: 0.75em;
+  padding: 1em;
+}
+
+.screen .ul .li {
+  flex: 1;
+  text-align: center;
+}
+
+.screen .ul .li picker {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.screen .ul .li image {
+  width: 0.8em;
+  height: 0.8em;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 0.2em;
+}
+
+.listCon .ul {
+  text-align: center;
+}
+
+.listCon .ul .li {
+  width: 45%;
+  display: inline-block;
+  margin: 1.5%;
+  box-shadow: 0 0 1em rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.listCon .ul .li image {
+  width: 100%;
+  height: 10em;
+}
+
+.listCon .ul .li .text {
+  text-align: left;
+  padding: 0 0.5em 0.5em;
+}
+
+.listCon .ul .li .text .h3 {
+  font-size: 0.85em;
+}
+
+.listCon .ul .li .text .data {
+  font-size: 0.75em;
+  color: #999;
+  margin-bottom: 1em;
+}
+
+.listCon .ul .li .text .price .del {
+  font-size: 0.75em;
+  text-decoration: line-through;
+  color: #999;
+}
+
+.listCon .ul .li .text .price .carprice {
+  font-size: 1.35em;
+  font-weight: bold;
+  color: rgb(255, 102, 0);
+}
+
+.listCon .ul .li .img {
+  position: relative;
+}
+
+.cias {
+  position: absolute;
+  top: 16%;
+  left: -17%;
+  width: 12em;
+  height: 2em;
+  background-color: rgba(255, 136, 0, 0.671);
+  transform: rotate(-45deg);
+  font-size: 0.65em;
+  color: #fff;
+  line-height: 2em;
+}
+
+.maskLayer {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 55;
+}
+
+.choose {
+  background-color: #fff;
+  position: fixed;
+  top: auto;
+  bottom: 0;
+  width: 100%;
+  height: 85vh;
+  border-radius: 0.5em 0.5em 0 0;
+  z-index: 66;
+}
+
+.chooseContent {
+  overflow-y: scroll;
+  height: 90%;
+  width: 100%;
+}
+
+.chooseTit {
+  text-align: center;
+  padding: 0.75em 0;
+  background-color: #76919c20;
+}
+
+.hotbrand {
+  padding: 0 1em;
+}
+
+.brandtitle {
+  font-size: 0.9em;
+  padding: 0.75em 0;
+  text-align: center;
+}
+
+.hotbrandCon .ul .li {
+  text-align: center;
+  width: 19%;
+  display: inline-block;
+  margin-bottom: 1em;
+}
+
+.hotbrandCon .ul .li .ico image {
+  width: 2.3em;
+  height: 2.3em;
+}
+
+.hotbrandCon .ul .li .text {
+  font-size: 0.8em;
+  color: rgb(95, 95, 95);
+}
+
+.allbrand .title {
+  background-color: #76919c20;
+  padding: 0.3em 1em;
+  color: #76919c86;
+  font-size: 0.8em;
+}
+
+.brandCon .ul .li {
+  padding: 0.75em 1em;
+  font-size: 0.85em;
+}
+
+.brandCon .ul .li:hover {
+  background-color: #76919c12;
+}
+
+.brandCon .ul .li {
+  border-bottom: 1px solid #eee;
+}
+
+.brandCon .ul .li .img {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.brandCon .ul .li text {
+  display: inline-block;
+}
+
+.brandCon .ul .li .img image {
+  width: 2.3em;
+  height: 2.3em;
+}
+
+.Letter {
+  position: fixed;
+  right: 2%;
+  font-size: 0.85rem;
+  top: 50%;
+  transform: translate(0, -50%);
+  text-align: center;
+  width: 3em;
+  color: #76919c;
+  z-index: 55555
+}
+
+.pricechoose .ul {
+  text-align: center;
+}
+
+.pricechoose .ul .li {
+  display: inline-block;
+  width: 30%;
+  font-size: 0.8em;
+  border: 1px solid #eee;
+  padding: 0.5em 0;
+  margin: 1%;
+}
+
+/* 自定义价格滑块 */
+
+.sliderHCon {
+  height: 250rpx;
+  width: 100%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.MoneyValue {
+  font-size: 22rpx;
+  text-align: center;
+  color: #666;
+  margin-top: 15rpx;
+}
+
+.showMoney {
+  display: flex;
+  justify-content: space-between;
+  width: 85%;
+  margin-top: -34px;
+  position: absolute;
+  color: #666;
+  font-size: 22rpx;
+}
+
+.showMoney text {
+  margin-right: -67rpx;
+}
+
+.twoSlider {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.twoSlider .leftSliderPrice {
+  position: absolute;
+  top: -34rpx;
+  left: 0;
+  width: 128rpx;
+  height: 60rpx;
+  line-height: 40rpx;
+  padding: 20rpx;
+  text-align: center;
+  color: #fff;
+}
+
+.sliderPrice view {
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  font-size: 22rpx;
+}
+
+.twoSlider .rightSliderPrice {
+  position: absolute;
+  top: -34rpx;
+  right: 0;
+  width: 128rpx;
+  height: 60rpx;
+  line-height: 40rpx;
+  padding: 20rpx;
+  text-align: center;
+  color: #fff;
+}
+
+.sliderView {
+  color: #666;
+}
+
+/* 滑动样式 */
+
+.select-construct {
+  width: 100%;
+}
+
+.select-area {
+  width: 90%;
+  padding: 0 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.slider-container {
+  width: 100%;
+  display: flex;
+  padding: 20px 0 10px;
+  position: relative;
+  margin-left: -6%;
+}
+
+.slider-left, .slider-right {
+  margin-right: -8rpx;
+}
+
+.priceC-title {
+  padding: 1em;
+  font-size: 0.85em;
+  display: flex;
+  align-items: center;
+}
+
+.priceC-title .priceCleft, .priceC-title .priceCright {
+  flex: 1;
+}
+
+.priceC-title .priceCright {
+  text-align: right;
+}
+
+.priceCright .btn {
+  background-color: #00b418;
+  color: #fff;
+  display: inline-block;
+  padding: 0.35em 1.3em;
+  border-radius: 0.2em;
+}
+
+/* 筛选 */
+
+.c-ScreenCon {
+  padding: 1em;
+  border-bottom: 1px solid #eee;
+}
+
+.c-ScreenCon .ul .li {
+  text-align: center;
+  display: inline-block;
+  width: 24%;
+  margin: 0.75em 0;
+}
+
+.c-ScreenCon .ul .li .ico image {
+  width: 4em;
+  height: 2em;
+}
+
+.c-ScreenCon .ul .li .text {
+  font-size: 0.85em;
+}
+
+.objective .pricechoose .ul {
+  text-align: left;
+}
+
+.objective .pricechoose .ul .li {
+  width: 30%;
+  margin: 1%;
+}
+
+.objective .tit {
+  margin-bottom: 0.5em;
+}
+
+.chooseScreen {
+  position: relative;
+  height: 80%;
+}
+
+.sub {
+  position: fixed;
+  bottom: 3%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 100%;
+  text-align: center;
+}
+
+.sub view {
+  width: 45%;
+  display: inline-block;
+  padding: 0.5em 0;
+  color: #fff;
+}
+
+.sub view.reset {
+  background-color: #ff9100;
+}
+
+.sub view.submit {
+  background-color: #76919c;
+}
+
+.objective .pricechoose .ul .li.on {
+  background-color: #76919c;
+  color: #fff;
+}
+
+.cartype .ul .li.on {
+  border: 1px solid #76919c;
+  color: #76919c;
+}
+
+.location image {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 0.5em;
+}
+.location .text{
+  display: inline-block;
+}
+.location{
+  display: inline-block;
+}
+.load{
+  text-align: center;
+}
+.active{
+  background: #76919c;
+  color: #ffff;
+}

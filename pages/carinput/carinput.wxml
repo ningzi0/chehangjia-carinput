@@ -1,0 +1,417 @@
+<!--pages/carinput/carinput.wxml-->
+<view class="carinput">
+
+  <view class="carinputContent">
+    <view class="ul">
+        <view class="li">
+            <text class="item left" >车辆品牌</text>
+            <view class="item right" bindtap="oneDialog">请选择</view>
+        </view>
+        <view class="li">
+            <text class="item left">车辆登记证书</text>
+            <view class="item right">
+              <view bindtap="chooseImg"  class="upload"> 上传 <image src="/images/my/jia.png"></image></view>
+              <view class='pic' wx:for="{{imgs}}" wx:for-item="item" wx:key="*this">
+                  <image class='weui-uploader__img 'src="{{item}}" data-index="{{index}}" mode="aspectFill" bindtap="previewImg"> </image>
+                  <!-- <icon type='cancel' class="delete-btn" data-index="{{index}}" catchtap="deleteImg"></icon> -->
+                  <text class="delete-btn" data-index="{{index}}" catchtap="deleteImg">×</text>
+              </view>
+            </view>
+        </view>
+        <view class="li">
+            <text class="item left">车辆行驶证</text>
+            <view class="item right">
+              <view bindtap="chooseImg"  class="upload"> 上传 <image src="/images/my/jia.png"></image></view>
+              <view class='pic' wx:for="{{imgs}}" wx:for-item="item" wx:key="*this">
+                  <image class='weui-uploader__img 'src="{{item}}" data-index="{{index}}" mode="aspectFill" bindtap="previewImg"> </image>
+                  <!-- <icon type='cancel' class="delete-btn" data-index="{{index}}" catchtap="deleteImg"></icon> -->
+                  <text class="delete-btn" data-index="{{index}}" catchtap="deleteImg">×</text>
+              </view>
+            </view>
+        </view>
+        <view class="li">
+            <text class="item left">车辆VIN码</text>
+            <input type="text" class="item right" placeholder="未填写" />
+        </view>
+        <view class="li">
+            <text class="item left">牌照号码</text>
+            <input type="text" class="item right licenseplate" value="贵A"  bindinput="sendText"/>
+        </view>
+        <view class="li">
+            <text class="item left">发动机号</text>
+            <input type="text" class="item right" placeholder="未填写" />
+        </view>
+    </view>
+
+    
+
+    <view class="ul">
+      <view class="li">
+            <text class="item left">车主姓名</text>
+            <input type="text" class="item right" placeholder="未填写" />
+        </view>
+        <view class="li">
+            <text class="item left">车主(法人)身份证号</text>
+            <input type="text" class="item right" placeholder="未填写" />
+        </view>
+      <view class="li">
+            <text class="item left">车辆产地性质</text>
+            <view class="item right">
+                <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+                    {{array[index]}}<image src="/images/my/down.png" mode="widthFill"></image>
+                </picker>
+           </view>
+        </view>
+        <view class="li">
+            <text class="item left">首次登记日期</text>
+            <view class="item right">
+                <picker mode="date" value="{{date}}" start="1000-09-01" end="9999-99-99" bindchange="bindDateChange">
+                   {{date}} 
+                </picker>
+            </view>
+        </view>
+        <view class="li">
+            <text class="item left">出厂日期</text>
+            <view class="item right">
+                <picker mode="date" value="{{date2}}" start="1000-09-01" end="9999-99-99" bindchange="bindDateChange2">
+                   {{date2}} 
+                </picker>
+            </view>
+        </view>
+        <view class="li">
+            <text class="item left">使用性质</text>
+            <view class="item right">
+                <picker bindchange="bindPickerChange2" value="{{index2}}" range="{{array2}}">
+                    {{array2[index2]}}<image src="/images/my/down.png" mode="widthFill"></image>
+                </picker>
+            </view>
+        </view>
+        <view class="li">
+            <text class="item left">车辆归属地</text>
+            <view class="item right">
+                <picker bindchange="changeRegin" mode = "region" value="{{region}}">
+                    <view class="tui-picker-detail">{{region[0]}} - {{region[1]}} - {{region[2]}}</view>
+                </picker>
+            </view>
+        </view>
+        <view class="li">
+            <text class="item left">预售价格(万元)</text>
+            <input type="text" class="item right" placeholder="未填写" />
+        </view>
+        <view class="li">
+            <text class="item left">车辆来源</text>
+            <view class="item right">
+                <radio-group>
+                    <label class="radio"><radio value="r1" color="#ff7300"  checked="true"/>个人</label>
+                    <label class="radio"><radio value="r2" color="#ff7300" />商家</label>
+                </radio-group>
+            </view>
+        </view>
+        <view class="li">
+            <text class="item left">商家所在地</text>
+            <view class="item right">
+                <picker bindchange="changeRegin2" mode = "region" value="{{region2}}">
+                    <view class="tui-picker-detail">{{region2[0]}} - {{region2[1]}} - {{region2[2]}}</view>
+                </picker>
+            </view>
+        </view>
+        <view class="li">
+            <text class="item left">年检日期</text>
+            <view class="item right">
+                <picker mode="date" value="{{date3}}" start="1000-09-01" end="9999-99-99" bindchange="bindDateChange3">
+                   {{date3}} 
+                </picker>
+            </view>
+        </view>
+        <view class="li">
+            <text class="item left">车船税日期</text>
+            <view class="item right">
+                <picker mode="date" value="{{date4}}" start="1000-09-01" end="9999-99-99" bindchange="bindDateChange4">
+                   {{date4}} 
+                </picker>
+            </view>
+        </view>
+        <view class="li">
+            <text class="item left">交强险</text>
+            <view class="item right">
+                <picker mode="date" value="{{date5}}" start="1000-09-01" end="9999-99-99" bindchange="bindDateChange5">
+                   {{date5}} 
+                </picker>
+            </view>
+        </view>
+        <view class="li">
+            <text class="item left">成交信息类型</text>
+            <view class="item right">
+                <radio-group>
+                    <label class="radio"><radio value="r1" color="#ff7300"  checked="true"/>个人</label>
+                    <label class="radio"><radio value="r2" color="#ff7300" />企业</label>
+                </radio-group>
+            </view>
+        </view>
+        <view class="li">
+            <text class="item left">客户姓名</text>
+            <input type="text" class="item right" placeholder="未填写" />
+        </view>
+        <view class="li">
+            <text class="item left">联系电话</text>
+            <input type="text" class="item right" placeholder="未填写" />
+        </view>
+        <view class="li">
+            <text class="item left">地址</text>
+            <input type="text" class="item right" placeholder="未填写" />
+        </view>
+        <view class="li">
+            <text class="item left">过户次数</text>
+            <input type="text" class="item right" placeholder="1" />
+        </view>
+        <view class="li">
+            <navigator url="/pages/carinput_other/carinput_other" class="item left">其他法定凭证</navigator>
+        </view>
+    </view>
+
+    <view class="ul">
+      <view class="li">
+            <text class="item left">购置税证书</text>
+            <view class="item right">
+                <switch checked/>
+            </view>
+        </view>
+        <view class="li">
+            <text class="item left">号牌</text>
+            <view class="item right">
+                <switch checked/>
+            </view>
+        </view>
+        <view class="li">
+            <text class="item left">行驶证</text>
+            <view class="item right">
+                <switch checked/>
+            </view>
+        </view>
+        <view class="li">
+            <text class="item left">登记证书</text>
+            <view class="item right">
+                <switch checked/>
+            </view>
+        </view>
+        <view class="li">
+            <text class="item left">保险单</text>
+            <view class="item right">
+                <switch checked/>
+            </view>
+        </view>
+        <view class="li">
+            <text class="item left">违章记录</text>
+            <view class="item right">
+                <switch />
+            </view>
+        </view>
+        <view class="li">
+            <text class="item left">车辆使用说明</text>
+            <view class="item right">
+                <switch checked/>
+            </view>
+        </view>
+    </view>
+
+  </view>
+
+<view class="btn">
+  <navigator url="/pages/carinput2/carinput2"  open-type="navigateTo">下一步</navigator>
+</view>
+
+</view>
+
+
+
+
+
+
+
+<!-- 车型选择 -->
+<view class="zan-dialog {{ showDialog ? 'zan-dialog--show' : '' }}">
+  <view class="zan-dialog__mask" bindtap="oneDialog" />
+  <view class="zan-dialog__container">
+    <view class='choose'>
+      <view class="chooseTit">
+       选择品牌</view>
+      <view class="Letter">
+        <view class="li hot" data-index="hot" catchtap="goToNode">热</view>
+        <block wx:for="{{brandAlphabets}}">
+          <view class="li " data-index="{{item.alphabet}}" catchtap="goToNode" wx:if="{{item.alphabet!='hot'}}">{{item.alphabet}}</view>
+        </block>
+      </view>
+
+      <scroll-view class="chooseContent" scroll-into-view="{{intoindex}}" scroll-y>
+        <!-- 字母筛选 -->
+
+
+        <view class="hotbrand" id="hot">
+          <view class="brandtitle">热门品牌</view>
+          <view class="hotbrandCon">
+            <view class="ul">
+              <view class="li" bindtap="twoDialog" data-brandName="奥迪">
+                <view class="ico">
+                  <image src="https://p6-dcd.byteimg.com/img/mosaic-legacy/1dd5000048d6334c26b4~tplv-resize:100:0.png"></image>
+                </view>
+                <view class="text">奥迪</view>
+              </view>
+              <view class="li" bindtap="twoDialog" data-brandName="奔驰">
+                <view class="ico">
+                  <image src="https://p6-dcd.byteimg.com/img/mosaic-legacy/1dd50000190229abeec8~tplv-resize:100:0.png"></image>
+                </view>
+                <view class="text">奔驰</view>
+              </view>
+              <view class="li" bindtap="twoDialog" data-brandName="本田">
+                <view class="ico">
+                  <image src="https://p3-dcd.byteimg.com/img/mosaic-legacy/1dd5000018fc7c108922~tplv-resize:100:0.png"></image>
+                </view>
+                <view class="text">本田</view>
+              </view>
+              <view class="li" bindtap="twoDialog" data-brandName="长城">
+                <view class="ico">
+                  <image src="https://p3-dcd.byteimg.com/img/mosaic-legacy/1dd5000018efd5725196~tplv-resize:100:0.png"></image>
+                </view>
+                <view class="text">长城</view>
+              </view>
+              <view class="li" bindtap="twoDialog" data-brandName="大众">
+                <view class="ico">
+                  <image src="https://p1-dcd.byteimg.com/img/motor-img/343173efb2ab28cda1b0e5a5b49dab8e~tplv-resize:100:0.png"></image>
+                </view>
+                <view class="text">大众</view>
+              </view>
+              <view class="li" bindtap="twoDialog" data-brandName="宝马">
+                <view class="ico">
+                  <image src="https://p1-dcd.byteimg.com/img/motor-img/4867710a834bd648ba55797ba5e37f14~tplv-resize:100:0.png"></image>
+                </view>
+                <view class="text">宝马</view>
+              </view>
+              <view class="li" bindtap="twoDialog" data-brandName="丰田">
+                <view class="ico">
+                  <image src="https://p1-dcd.byteimg.com/img/motor-img/c8eb9d15ac7e99904711b5ffe5538777~tplv-resize:100:0.png"></image>
+                </view>
+                <view class="text">丰田</view>
+              </view>
+              <view class="li" bindtap="twoDialog" data-brandName="福特">
+                <view class="ico">
+                  <image src="https://p1-dcd.byteimg.com/img/mosaic-legacy/1dd50000190c8e84e016~tplv-resize:100:0.png"></image>
+                </view>
+                <view class="text">福特</view>
+              </view>
+              <view class="li" bindtap="twoDialog" data-brandName="日产">
+                <view class="ico">
+                  <image src="https://p1-dcd.byteimg.com/img/mosaic-legacy/1dd5000019779bf8dfb2~tplv-resize:100:0.png"></image>
+                </view>
+                <view class="text">日产</view>
+              </view>
+              <view class="li" bindtap="twoDialog" data-brandName="雪佛兰">
+                <view class="ico">
+                  <image src="https://p9-dcd.byteimg.com/img/mosaic-legacy/1dd50000196a38ee3f43~tplv-resize:100:0.png"></image>
+                </view>
+                <view class="text">雪佛兰</view>
+              </view>
+            </view>
+          </view>
+        </view>
+
+        <view class="allbrand">
+
+          <!-- 全部品牌 -->
+          <view class="brandContent">
+            <block wx:for="{{brandAlphabets}}">
+              <view class="title" wx:if="{{item.alphabet!='hot'}}">{{item.alphabet}}</view>
+              <view class="brandCon" id="{{item.alphabet}}">
+                <view class="ul">
+                  <block wx:for="{{brandLists[item.alphabet]}}">
+                    <view class="li" bindtap="twoDialog" data-brandName="{{item.brandName}}">
+                      <view class="img">
+                        <image src="{{item.brandLogo}}"></image>
+                      </view>
+                      <text>{{item.brandName}}</text>
+                    </view>
+                  </block>
+                </view>
+              </view>
+            </block>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+</view>
+
+
+
+<!-- 二级弹出 -->
+<view class="zan-dialog {{ two ? 'zan-dialog--show' : '' }}">
+  <view class="zan-dialog__mask" bindtap="two" />
+  <view class="zan-dialog__container">
+    <view class='choose'>
+      <view class="chooseTit">
+        选择车型</view>
+      <view class="chooseContent">
+        <view class="allbrand">
+          <!-- 全部品牌 -->
+          <view class="brandContent">
+            <view class="brandCon">
+              <view class="ul">
+                <block wx:for="{{serises}}">
+                  <view class="li" data-serise="{{item}}" bindtap="threeDialog">
+                    <text>{{item}}</text>
+                  </view>
+                </block>
+              </view>
+            </view>
+
+          </view>
+        </view>
+
+      </view>
+    </view>
+  </view>
+</view>
+
+
+<!-- 三级选择 -->
+<!-- 二级弹出 -->
+<view class="zan-dialog {{ three ? 'zan-dialog--show' : '' }}">
+  <view class="zan-dialog__mask" bindtap="three" />
+  <view class="zan-dialog__container">
+    <view class='choose'>
+      <view class="chooseTit">
+        选择车型</view>
+      <view class="chooseContent">
+        <view class="allbrand">
+          <!-- 全部品牌 -->
+          <view class="brandContent">
+            <view class="brandCon">
+              <view class="ul">
+                <block wx:for="{{models}}">
+                  <view class="li" data-model="{{item}}" bindtap="compelete">
+                    <text>{{item}}</text>
+                  </view>
+                </block>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="flex fix_nav_wp">
+    <block wx:for="{{navData}}">
+      <template is="FooterNav" data="{{...item}}" />
+    </block>
+  </view>
+</view>
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,13 @@
+/* pages/Lately/Lately.wxss */
+.hotcarsContent .ul .li{
+  box-sizing: border-box;
+  padding: 0.5em;
+}
+.hotcarsContent .ul .li .text{
+  width: 44%;
+}
+.lately-p{
+  padding: 0.5em 0.5em 0;
+  font-size:0.85em ;
+  color: #999;
+}

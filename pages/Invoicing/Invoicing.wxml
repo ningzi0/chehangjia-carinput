@@ -1,0 +1,46 @@
+<!--pages/carinput/carinput.wxml-->
+<view class="carinput">
+
+<view class="carinputContent">
+  <view class="ul">
+      <view class="li">
+          <text class="item left">上传新车主身份证或营业执照</text>
+          <view class="item right">
+            <view bindtap="chooseImg"  class="upload"> 上传 <image src="/images/my/jia.png"></image></view>
+            <view class='pic' wx:for="{{imgs}}" wx:for-item="item" wx:key="*this">
+                <image class='weui-uploader__img 'src="{{item}}" data-index="{{index}}" mode="aspectFill" bindtap="previewImg"> </image>
+                <!-- <icon type='cancel' class="delete-btn" data-index="{{index}}" catchtap="deleteImg"></icon> -->
+                <text class="delete-btn" data-index="{{index}}" catchtap="deleteImg">×</text>
+            </view>
+          </view>
+      </view>
+      <view class="li">
+          <text class="item left">上传车辆登记大本</text>
+          <view class="item right">
+            <view bindtap="chooseImg"  class="upload"> 上传 <image src="/images/my/jia.png"></image></view>
+            <view class='pic' wx:for="{{imgs}}" wx:for-item="item" wx:key="*this">
+                <image class='weui-uploader__img 'src="{{item}}" data-index="{{index}}" mode="aspectFill" bindtap="previewImg"> </image>
+                <!-- <icon type='cancel' class="delete-btn" data-index="{{index}}" catchtap="deleteImg"></icon> -->
+                <text class="delete-btn" data-index="{{index}}" catchtap="deleteImg">×</text>
+            </view>
+          </view>
+      </view>
+  </view>
+
+
+
+
+</view>
+
+<view class="btn">
+<navigator url="">提交</navigator>
+</view>
+
+</view>
+
+
+
+
+
+
+

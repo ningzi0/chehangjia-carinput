@@ -1,0 +1,25 @@
+<!--pages/Lately/Lately.wxml-->
+<view class="lately-p">您最近浏览的车型(保留10条)</view>
+<view class="hotcarsContent">
+  <view class="ul">
+    <block wx:for="{{carList}}">
+      <view class="li">
+        <navigator url="../carshow/carshow?id={{item.carid}}">
+          <view class="img">
+            <image src="{{press256pic}}/{{item.imgName}}" mode="widthFix"></image>
+          </view>
+          <view class="text">
+            <view class="h3">{{item.title}}</view>
+            <view class="data">{{item.firstDate}}上牌|行驶{{item.meter}}万公里|{{item.standarnd}}</view>
+            <view class="price">
+              <!-- <text class="del">指导价:270.8万</text> -->
+              <text class="carprice">￥{{item.price}}万</text>
+            </view>
+          </view>
+        </navigator>
+      </view>
+    </block>
+
+
+  </view>
+</view>

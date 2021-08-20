@@ -1,0 +1,70 @@
+<!--pages/all/all.wxml-->
+<view class="all">
+  <view class="title-wrap">
+    <view class="title">
+      <image src="../../images/all-ico.png"></image>基本参数</view>
+  </view>
+  <view class="allcon">
+    <view class="li">
+      <view class="li-item">车身颜色</view>
+      <view class="li-item">{{carInfo.color}}</view>
+    </view>
+    <view class="li">
+      <view class="li-item">里程</view>
+      <view class="li-item">{{carInfo.meter}}万</view>
+    </view>
+    <view class="li">
+      <view class="li-item">燃油标号</view>
+      <view class="li-item">{{carInfo.fueLabel}}</view>
+    </view>
+    <view class="li">
+      <view class="li-item">排量(L)</view>
+      <view class="li-item">{{carInfo.displacement}}</view>
+    </view>
+    <view class="li">
+      <view class="li-item">缸数</view>
+      <view class="li-item">{{carInfo.cylinder}}</view>
+    </view>
+    <view class="li">
+      <view class="li-item">发动机功率(KW)</view>
+      <view class="li-item">{{carInfo.power}}</view>
+    </view>
+    <view class="li">
+      <view class="li-item">排放标准</view>
+      <view class="li-item">{{carInfo.ces}}</view>
+    </view>
+    <view class="li">
+      <view class="li-item">变速器形式</view>
+      <view class="li-item">{{carInfo.gearBox}}</view>
+    </view>
+    <view class="li">
+      <view class="li-item">安全气囊(个)</view>
+      <view class="li-item">{{carInfo.airBag}}</view>
+    </view>
+    <view class="li">
+      <view class="li-item">驱动方式</view>
+      <view class="li-item">{{carInfo.drive}}</view>
+    </view>
+    <view class="li">
+      <view class="li-item">ABS</view>
+      <view class="li-item">{{carInfo.abs}}</view>
+    </view>
+    <view class="li">
+      <view class="li-item">轮毂材质</view>
+      <view class="li-item">{{carInfo.hub}}</view>
+    </view>
+  </view>
+
+  <view class="title-wrap right">
+    <view class="title">
+      <image src="../../images/allother.png"></image>其他重要参数</view>
+  </view>
+  <view class="allcon">
+    <block wx:for="{{carInfo.other}}">
+      <view class="li">
+        <view class="li-item" style="text-align:left">{{item}}</view>
+        <!-- <view class="li-item">有</view> -->
+      </view>
+    </block>
+  </view>
+</view>

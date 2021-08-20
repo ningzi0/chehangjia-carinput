@@ -1,0 +1,49 @@
+<!--pages/carinput/carinput.wxml-->
+<view class="carinput">
+
+<view class="carinputContent">
+  
+
+  <view class="ul">
+    <block wx:for="{{arr}}">
+      <view class="li">
+          <text class="item left">{{item.title}}</text>
+          <view class="item right">
+              <radio-group>
+                  <label class="radio normal"><radio value="r1" color="#ff7300"  checked="true"/>{{item.radio}}</label>
+                  <label class="radio abnormal"><radio value="r2" color="#ff7300" />{{item.radio2}}</label>
+                  <label class="radio abnormal"><radio value="r3" color="#ff7300" />{{item.radio3}}</label>
+              </radio-group>
+          </view>
+      </view>
+    </block>
+    <view class="li">
+          <text class="item left">发动机舱检查备注</text>
+          <input type="text" class="item right" placeholder="未填写" />
+      </view>
+  </view>
+</view>
+
+<view class="btn">
+  <navigator url="/pages/report/report" open-type="navigateBack">保存并返回</navigator>
+</view>
+
+</view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

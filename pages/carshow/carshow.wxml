@@ -1,0 +1,163 @@
+<!--pages/carshow/carshow.wxml-->
+<view class="carbanner">
+  <swiper bindchange="swiperChange" indicator-dots="true" autoplay="true" indicator-color="white" indicator-active-color="#e0c185">
+    <block wx:for="{{imagesUrls}}" wx:key="*this">
+      <swiper-item wx:key="*this">
+        <image src="{{imagesUrl}}/{{item}}" data-index='{{index}}' class="slide-image" mode="widthFix" bindtap='previewImg' />
+      </swiper-item>
+    </block>
+  </swiper>
+
+  <view class="imageCount">{{current+1}}/{{imagesUrls.length}}</view>
+</view>
+
+
+<view class="carContent">
+  <view class="price">￥{{carInfo.price}}万</view>
+  <view class="carTitle">
+    <view class="carTitCon">{{carInfo.title}}</view>
+    <view class="cartips">一年全国联保[*提挡、过户费另计]</view>
+  </view>
+
+  <!-- 基本信息 -->   
+  <view class="carlist">
+    <view class="ul">
+      <view class="li">
+        <image src="../../images/sj.png"></image>
+        <view class="icotext">
+          <text>登记日期</text>
+          <text>{{carInfo.firstDate}}</text>
+        </view>
+      </view>
+      <view class="li">
+        <image src="../../images/lc.png"></image>
+        <view class="icotext">
+          <text>表显里程[km]</text>
+          <text>{{carInfo.meter}}</text>
+        </view>
+      </view>
+      <view class="li">
+        <image src="../../images/dw.png"></image>
+        <view class="icotext">
+          <text>档位</text>
+          <text>{{carInfo.gearBox}}</text>
+        </view>
+      </view>
+      <view class="li">
+        <image src="../../images/zw.png"></image>
+        <view class="icotext">
+          <text>牌照所在地</text>
+          <text>{{carInfo.location}}</text>
+        </view>
+      </view>
+      <view class="li">
+        <image src="../../images/pq.png"></image>
+        <view class="icotext">
+          <text>排放[迁入地为准]</text>
+          <text>{{carInfo.ces}}</text>
+        </view>
+      </view>
+      <view class="li">
+        <image src="../../images/pl.png"></image>
+        <view class="icotext">
+          <text>排量[L]</text>
+          <text>{{carInfo.displacement}}</text>
+        </view>
+      </view>
+
+    </view>
+
+    <view class="all">
+      <navigator url="../all/all?id={{carId}}">全部参数</navigator>
+    </view>
+  </view>
+
+  <!-- 车源描述 -->
+  <!-- <view class="describe">
+      <view class="describe-title">车源描述</view>
+      <view class="describe-con">
+          <view class="p">V6 3.0T高功率机械增压发动机加上Quattor全时四驱的加持，即便是新车也是同级别中性价比超高的选择。</view>
+          <view class="p">动力十分浑厚，超车轻松自在，高速120巡航也能保持在2000转以下，再加上奥迪几十年对于中国道路不断研究，一再优化的底盘调校，不管是烂路还是好路都能平顺的化解，舒适又不失韧性，操控与舒适的鱼和熊掌也可以得兼。</view>
+          <view class="p">两把遥控钥匙</view>
+          <view class="p">两前轮胎2019年更换，两后轮胎2017年更换，目前无需更换</view>
+          <view class="p">豪华版，自动驻车、空气悬架、全景天窗、无钥匙进入启动、方向盘换挡、前排座椅通风加热、后排座椅通风加热按摩、BOSE音响等配置</view>
+      </view>
+  </view> -->
+
+  <!-- 报告 -->
+  <view class="report">
+    <view class="describe-title">认证报告</view>
+    <view class="reportCon">
+      <view class="li">
+        <navigator url="../Presentation/Presentation?id={{carId}}&index=0&tag=frame">
+          <image src="../../images/baogao/gujia.png" mode="aspectFill"></image>
+          <view class="text">车辆骨架</view>
+        </navigator>
+      </view>
+      <view class="li">
+        <navigator url="../Presentation/Presentation?id={{carId}}&index=1&tag=body">
+          <image src="../../images/baogao/waiguan.png" mode="aspectFill"></image>
+          <view class="text">车身外观</view>
+        </navigator>
+      </view>
+      <view class="li">
+        <navigator url="../Presentation/Presentation?id={{carId}}&index=2&tag=parts">
+          <image src="../../images/baogao/bujian.png" mode="aspectFill"></image>
+          <view class="text">功能部件</view>
+        </navigator>
+      </view>
+      <view class="li">
+        <navigator url="../Presentation/Presentation?id={{carId}}&index=3&tag=start">
+          <image src="../../images/baogao/fangxiangpan.png" mode="aspectFill"></image>
+          <view class="text">启动检查</view>
+        </navigator>
+      </view>
+      <view class="li">
+        <navigator url="../Presentation/Presentation?id={{carId}}&index=4&tag=bottom">
+          <image src="../../images/baogao/dipan.png" mode="aspectFill"></image>
+          <view class="text">底盘检查</view>
+        </navigator>
+      </view>
+      <view class="li">
+        <navigator url="../Presentation/Presentation?id={{carId}}&index=5&tag=road">
+          <image src="../../images/baogao/lushi.png" mode="aspectFill"></image>
+          <view class="text">路试检查</view>
+        </navigator>
+      </view>
+      <view class="li">
+        <navigator url="../Presentation/Presentation?id={{carId}}&index=6&tag=cab">
+          <image src="../../images/baogao/jiashicang.png" mode="aspectFill"></image>
+          <view class="text">驾驶舱</view>
+        </navigator>
+      </view>
+      <view class="li">
+        <navigator url="../Presentation/Presentation?id={{carId}}&index=7&tag=engine">
+          <image src="../../images/baogao/fadongji.png" mode="aspectFill"></image>
+          <view class="text">发动机</view>
+        </navigator>
+      </view>
+    </view>
+  </view>
+
+
+  <!-- 车辆照片 -->
+  <view class="carsphoto">
+    <view class="describe-title">车源图片</view>
+    <view class="carsPhotoCon">
+      <block wx:for="{{imagesUrls}}" wx:key="*this">
+        <image src="{{imagesUrl}}/{{item}}" data-index='{{index}}' class="slide-image" mode="widthFix" bindtap='previewImg' />
+      </block>
+    </view>
+  </view>
+
+
+
+
+  <!-- 底部菜单 -->
+  <view class="footer">
+    <navigator bindtap="callPhone">预约看车</navigator>
+    <navigator bindtap="callPhone">咨询客服</navigator>
+  </view>
+
+
+</view>

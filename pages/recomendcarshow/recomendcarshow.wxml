@@ -1,0 +1,235 @@
+<!--pages/carshow/carshow.wxml-->
+<view class="carbanner">
+  <swiper bindchange="swiperChange" indicator-dots="true" autoplay="true" indicator-color="white" indicator-active-color="#e0c185">
+    <block wx:for="{{imagesUrls}}" wx:key="*this">
+      <swiper-item wx:key="*this">
+        <image src="{{imagesUrl}}/{{item}}" data-index='{{index}}' class="slide-image" mode="widthFix" bindtap='previewImg' />
+      </swiper-item>
+    </block>
+  </swiper>
+
+  <view class="imageCount">{{current+1}}/{{imagesUrls.length}}</view>
+</view>
+
+
+<view class="carContent">
+  <view class="price">￥{{carInfo.carPrice}}万</view>
+  <view class="carTitle">
+    <view class="carTitCon">{{carInfo.title}}</view>
+    <view class="cartips">一年全国联保[*提挡、过户费另计]</view>
+  </view>
+
+  <!-- 基本信息 -->
+  <view class="carlist">
+    <view class="ul">
+      <view class="li">
+        <image src="../../images/sj.png"></image>
+        <view class="icotext">
+          <text>登记日期</text>
+          <text>{{carInfo.createdtime}}</text>
+        </view>
+      </view>
+      <view class="li">
+        <image src="../../images/lc.png"></image>
+        <view class="icotext">
+          <text>表显里程[km]</text>
+          <text>{{carInfo.carMileage}}</text>
+        </view>
+      </view>
+      <view class="li">
+        <image src="../../images/people.png"></image>
+        <view class="icotext">
+          <text>鉴定师</text>
+          <text>{{carInfo.appraiserName}}</text>
+        </view>
+      </view>
+      <!-- <view class="li">
+        <image src="../../images/zw.png"></image>
+        <view class="icotext">
+          <text>牌照所在地</text>
+          <text>{{carInfo.location}}</text>
+        </view>
+      </view> -->
+      <!-- <view class="li">
+        <image src="../../images/pq.png"></image>
+        <view class="icotext">
+          <text>排放[迁入地为准]</text>
+          <text>{{carInfo.ces}}</text>
+        </view>
+      </view> -->
+      <!-- <view class="li">
+        <image src="../../images/pl.png"></image>
+        <view class="icotext">
+          <text>排量[L]</text>
+          <text>{{carInfo.displacement}}</text>
+        </view>
+      </view> -->
+
+    </view>
+
+    <!-- <view class="all">
+      <navigator url="../all/all?id={{carId}}">全部参数</navigator>
+    </view> -->
+  </view>
+
+
+  <view class="describe">
+    <view class="describe-title">车况描述</view>
+    <view class="describe-con">
+      <view class="p">{{carInfo.carDesc}}</view>
+
+    </view>
+  </view>
+
+  <!-- 报告 -->
+  <view class="report">
+    <view class="describe-title">其他</view>
+    <view class="renzheng">
+      <view class="renzheng-con">
+        <view class="renzheng-tit">收车筛选</view>
+        <view class="ul">
+          <view class="li">
+            <view class="ico">
+              <image src="../../images/clsc.png"></image>
+            </view>
+            <view class="renzheng-item">
+              <view class="h4">材料审查</view>
+              <view class="text">{{carInfo.option11}}</view>
+            </view>
+          </view>
+          <view class="li">
+            <view class="ico">
+              <image src="../../images/sgpc.png"></image>
+            </view>
+            <view class="renzheng-item">
+              <view class="h4">事故排查</view>
+              <view class="text">{{carInfo.option12}}</view>
+            </view>
+          </view>
+          <view class="li">
+            <view class="ico">
+              <image src="../../images/pxzx.png"></image>
+            </view>
+            <view class="renzheng-item">
+              <view class="h4">品相甄选</view>
+              <view class="text">{{carInfo.option13}}</view>
+            </view>
+          </view>
+          <view class="li">
+            <view class="ico">
+              <image src="../../images/ckgl.png"></image>
+            </view>
+            <view class="renzheng-item">
+              <view class="h4">车况过滤</view>
+              <view class="text">{{carInfo.option14}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="renzheng-con">
+        <view class="renzheng-tit">检车&检修</view>
+        <view class="ul">
+          <view class="li">
+            <view class="ico">
+              <image src="../../images/ddfs.png"></image>
+            </view>
+            <view class="renzheng-item">
+              <view class="h4">到店复鉴</view>
+              <view class="text">{{carInfo.option21}}</view>
+            </view>
+          </view>
+          <view class="li">
+            <view class="ico">
+              <image src="../../images/dlcs.png"></image>
+            </view>
+            <view class="renzheng-item">
+              <view class="h4">道路测试</view>
+              <view class="text">{{carInfo.option22}}</view>
+            </view>
+          </view>
+          <view class="li">
+            <view class="ico">
+              <image src="../../images/sjjc.png"></image>
+            </view>
+            <view class="renzheng-item">
+              <view class="h4">上架检查</view>
+              <view class="text">{{carInfo.option23}}</view>
+            </view>
+          </view>
+          <view class="li">
+            <view class="ico">
+              <image src="../../images/byxz.png"></image>
+            </view>
+            <view class="renzheng-item">
+              <view class="h4">必要修整</view>
+              <view class="text">{{carInfo.option24}}</view>
+            </view>
+          </view>
+          <view class="li">
+            <view class="ico">
+              <image src="../../images/kxzb.png"></image>
+            </view>
+            <view class="renzheng-item">
+              <view class="h4">可选整备</view>
+              <view class="text">{{carInfo.option25}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="renzheng-con">
+        <view class="renzheng-tit">售后担当</view>
+        <view class="ul">
+          <view class="li">
+            <view class="ico">
+              <image src="../../images/zytc.png"></image>
+            </view>
+            <view class="renzheng-item">
+              <view class="h4">走眼退车</view>
+              <view class="text">{{carInfo.option31}}</view>
+            </view>
+          </view>
+          <view class="li">
+            <view class="ico">
+              <image src="../../images/shzb.png"></image>
+            </view>
+            <view class="renzheng-item">
+              <view class="h4">售后质保</view>
+              <view class="text">{{carInfo.option32}}</view>
+            </view>
+          </view>
+          <view class="li">
+            <view class="ico">
+              <image src="../../images/trwx.png"></image>
+            </view>
+            <view class="renzheng-item">
+              <view class="h4">通融维修</view>
+              <view class="text">{{carInfo.option33}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+
+  <!-- 车辆照片 -->
+  <view class="carsphoto">
+    <view class="describe-title">车源图片</view>
+    <view class="carsPhotoCon">
+      <block wx:for="{{imagesUrls}}" wx:key="*this">
+        <image src="{{imagesUrl}}/{{item}}" data-index='{{index}}' class="slide-image" mode="widthFix" bindtap='previewImg' />
+      </block>
+    </view>
+  </view>
+
+
+
+
+  <!-- 底部菜单 -->
+  <view class="footer">
+    <navigator bindtap="callPhone">预约看车</navigator>
+    <navigator bindtap="callPhone">咨询客服</navigator>
+  </view>
+
+
+</view>

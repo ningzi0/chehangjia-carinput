@@ -1,0 +1,45 @@
+<!--pages/carinput/carinput.wxml-->
+<view class="carinput">
+
+<view class="carinputContent">
+  
+  <view class="ul">
+    <block wx:for="{{arr}}">
+      <view class="li">
+            <text class="item left">{{item.content}}</text>
+            <view class="item right">
+                <switch checked/>
+            </view>
+        </view>
+    </block>
+    <view class="li">
+        <text class="item left">其它/备注</text>
+        <input type="text" class="item right" placeholder="未填写" />
+    </view>
+  </view>
+
+</view>
+
+<view class="btn">
+  <navigator url="/pages/report/report" open-type="navigateBack">保存并返回</navigator>
+
+</view>
+
+</view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

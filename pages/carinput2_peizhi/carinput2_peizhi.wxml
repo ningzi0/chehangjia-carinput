@@ -1,0 +1,170 @@
+<!--pages/carinput/carinput.wxml-->
+<view class="carinput">
+<view class="carinputContent">
+  <view class="ul">
+      <view class="li">
+          <text class="item left">转向助力</text>
+          <view class="item right">
+              <switch/>
+          </view>
+      </view>
+      <view class="li">
+          <text class="item left">电动车窗</text>
+          <view class="item right">
+              <switch/>
+          </view>
+      </view>
+      <view class="li">
+          <text class="item left">天窗</text>
+          <view class="item right">
+              <switch/>
+          </view>
+      </view>
+      <view class="li">
+          <text class="item left">空调</text>
+          <view class="item right">
+              <switch/>
+          </view>
+      </view>
+      <view class="li">
+          <text class="item left">真皮座椅</text>
+          <view class="item right">
+              <switch/>
+          </view>
+      </view>
+      <view class="li">
+          <text class="item left">电动反光镜</text>
+          <view class="item right">
+              <switch/>
+          </view>
+      </view>
+      <view class="li">
+          <text class="item left">倒车雷达</text>
+          <view class="item right">
+              <switch/>
+          </view>
+      </view>
+      <view class="li">
+          <text class="item left">倒车影响</text>
+          <view class="item right">
+              <switch/>
+          </view>
+      </view>
+      <view class="li">
+          <text class="item left">定速巡航</text>
+          <view class="item right">
+              <switch/>
+          </view>
+      </view>
+      <view class="li">
+          <text class="item left">电吸门</text>
+          <view class="item right">
+              <switch/>
+          </view>
+      </view>
+      <view class="li">
+          <text class="item left">后排电动座椅</text>
+          <view class="item right">
+              <switch/>
+          </view>
+      </view>
+      <view class="li">
+          <text class="item left">自动泊车</text>
+          <view class="item right">
+              <switch/>
+          </view>
+      </view>
+      <view class="li">
+          <text class="item left">隔物板</text>
+          <view class="item right">
+              <switch/>
+          </view>
+      </view>
+      <view class="li">
+          <text class="item left">座椅加热</text>
+          <view class="item right">
+              <switch/>
+          </view>
+      </view>
+      <view class="li">
+          <text class="item left">一键启动</text>
+          <view class="item right">
+              <switch/>
+          </view>
+      </view>
+      <view class="li">
+          <text class="item left">大灯清洗</text>
+          <view class="item right">
+              <switch/>
+          </view>
+      </view>
+      <view class="li">
+          <text class="item left">导航系统</text>
+          <view class="item right">
+              <switch/>
+          </view>
+      </view>
+      <view class="li">
+          <text class="item left">电动遮阳帘</text>
+          <view class="item right">
+              <switch/>
+          </view>
+      </view>
+      <view class="li">
+          <text class="item left">多功能方向盘</text>
+          <view class="item right">
+              <switch/>
+          </view>
+      </view>
+      <view class="li">
+          <text class="item left">DVD/CD</text>
+          <view class="item right">
+              <switch/>
+          </view>
+      </view>
+      <view class="li">
+          <text class="item left">中控锁</text>
+          <view class="item right">
+              <switch/>
+          </view>
+      </view>
+      <view class="li">
+          <text class="item left">电动座椅</text>
+          <view class="item right">
+              <switch/>
+          </view>
+      </view>
+      <view class="li">
+          <text class="item left">底盘升降</text>
+          <view class="item right">
+              <switch/>
+          </view>
+      </view>
+
+
+  </view>
+
+</view>
+
+<view class="btn">
+<navigator>确定</navigator>
+</view>
+
+</view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,20 @@
+/* pages/report/report.wxss */
+
+.reportContent .li .icon{
+  text-align: right;
+}
+.reportContent .li .icon image{
+  width: 60rpx;
+  height: 60rpx;
+}
+
+.reportContent .li navigator{
+  display: flex;
+  align-items: center;
+  font-size: 30rpx;
+  padding: 20rpx;
+  border-bottom: 1px solid #eee;
+}
+.reportContent .li navigator .item{
+  flex: 1;
+}

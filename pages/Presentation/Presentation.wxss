@@ -1,0 +1,81 @@
+.pre-top{
+  padding: 1em;
+}
+.pre-top text{
+  color: #101846;
+  font-size: 2em;
+  font-weight: bold;
+}
+.pre-top .p{
+  font-size: 0.8em;
+  color: #c9c9c9;
+  padding: 1em 0;
+  line-height: 1.75;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid #f9f9f9;
+}
+.pre-tab .ul{
+  display: flex;
+  width: 100%;
+  overflow-x: scroll;
+  -webkit-overflow-scrolling: touch
+}
+.pre-tab .ul .li {
+  width: 30%;
+  margin: 0 1em;
+}
+.pre-tab .ul .li .ico{
+  width: 3em;
+  height: 3em;
+  background-color: #eeedeb;
+  border-radius: 50%;
+  text-align: center;
+  position: relative;
+}
+.pre-tab .ul .li .ico image{
+  width: 60%;
+  height: 60%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.pre-tab .ul .li .text{
+  font-size:0.75em ;
+  padding: 0.35em 0;
+  color: #8a8a8a;
+}
+
+/* 报告内容 */
+
+.preCon{
+  min-height: 10em;
+  /* background-color: #011e3e; */
+  margin: 1.5em 1em;
+  border-radius: 1em;
+  padding: 1em;
+  box-shadow: 0 0 1em rgba(0,0,0,0.1);
+}
+
+.preContit{
+  color: #101846;
+  font-size:1.2em ;
+  font-weight: bold;
+}
+.allcon{
+  margin: 0.75em 0;
+  height: 48vh;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch
+}
+.allcon .li .li-item:first-child{
+  color:#101846
+}
+.allcon .li{
+  border-bottom: 1px solid #eee;
+}
+.allcon image{
+  width: 1.3em;
+  height: 1.3em;
+}

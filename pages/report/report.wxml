@@ -1,0 +1,19 @@
+<!--pages/report/report.wxml-->
+<view class="report">
+    <view class="reportContent">
+          <block wx:for="{{arr}}">
+                <view class="li">
+                  <navigator url="{{item.url}}">
+                    <view class="text item">{{item.title}}</view>
+                    <view class="icon item">
+                        <image src="/images/my/right_icon.png"></image>
+                    </view>
+                  </navigator>
+                </view>
+          </block>
+    </view>
+
+    <view class="btn">
+      <navigator url="/pages/carinput11/carinput11">下一步</navigator>
+    </view>
+</view>

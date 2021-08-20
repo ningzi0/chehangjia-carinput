@@ -1,0 +1,438 @@
+<view class="pre-top">
+  <text>质检报告</text>
+  <view class="p">品质可靠、认证标准</view>
+</view>
+
+<view class="pre-tab">
+  <view class="ul">
+    <block wx:for="{{reportItems}}">
+      <view class="li" data-index="{{index}}" data-tag="{{item.tag}}" data-text="{{item.text}}" bindtap="getReportInfo">
+        <view class="ico">
+          <image src="{{item.src}}" mode="aspectFill"></image>
+        </view>
+        <view class="text">{{item.text}}</view>
+      </view>
+    </block>
+
+  </view>
+</view>
+
+
+<!-- 报告内容 -->
+<view class="preCon">
+
+  <view class="preContit">{{reportItems[index].text}}</view>
+  <view class="ul">
+    <view class="allcon">
+      <block wx:for="{{reports[tag]}}">
+        <view class="li">
+          <view class="li-item">{{item.reportText}}</view>
+          <view class="li-item" wx:if="{{item.reportValue=='0'||item.reportValue=='是'}}">
+            <image src="../../images/renzheng.png"></image>
+          </view>
+          <view class="li-item" wx:if="{{item.reportValue=='1'||item.reportValue=='否'}}">
+            <image src="../../images/warning.png"></image>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <view class="all presentation">
+
+<scroll-view  scroll-into-view="{{toView}}" style='height:100vh;' scroll-y="true" class="scr">
+<view id="view1">
+    <view class="title">车辆骨架</view>
+    <view class="allcon">
+        <view class="li">
+            <view class="li-item">车体整体对称性</view>
+            <view class="li-item">
+              <image src="../../images/succ.png" mode="aspectFill"></image>
+            </view>
+        </view>
+        <view class="li">
+            <view class="li-item">后防撞梁</view>
+            <view class="li-item">
+              <image src="../../images/succ.png" mode="aspectFill"></image>
+            </view>
+        </view>
+        <view class="li">
+            <view class="li-item">右C柱</view>
+            <view class="li-item">
+              <image src="../../images/succ.png" mode="aspectFill"></image>
+            </view>
+        </view>
+        <view class="li">
+            <view class="li-item">行李箱底板</view>
+            <view class="li-item">
+              <image src="../../images/succ.png" mode="aspectFill"></image>
+            </view>
+        </view>
+        <view class="li">
+            <view class="li-item">左后纵梁</view>
+            <view class="li-item">
+              <image src="../../images/succ.png" mode="aspectFill"></image>
+            </view>
+        </view>
+        <view class="li">
+            <view class="li-item">右前减震器悬挂部位</view>
+            <view class="li-item">
+              <image src="../../images/succ.png" mode="aspectFill"></image>
+            </view>
+        </view>
+        <view class="li">
+            <view class="li-item">驾驶室底板</view>
+            <view class="li-item">
+              <image src="../../images/succ.png" mode="aspectFill"></image>
+            </view>
+        </view>
+        <view class="li">
+            <view class="li-item">右底大边</view>
+            <view class="li-item">
+              <image src="../../images/succ.png" mode="aspectFill"></image>
+            </view>
+        </view>
+        <view class="li">
+            <view class="li-item">驾驶室底板梁</view>
+            <view class="li-item">
+              <image src="../../images/succ.png" mode="aspectFill"></image>
+            </view>
+        </view>
+        <view class="li">
+            <view class="li-item">左C柱</view>
+            <view class="li-item">
+              <image src="../../images/succ.png" mode="aspectFill"></image>
+            </view>
+        </view>
+        <view class="li">
+            <view class="li-item">右A柱</view>
+            <view class="li-item">
+              <image src="../../images/succ.png" mode="aspectFill"></image>
+            </view>
+        </view>
+        <view class="li">
+            <view class="li-item">车顶左边梁</view>
+            <view class="li-item">
+              <image src="../../images/succ.png" mode="aspectFill"></image>
+            </view>
+        </view>
+        <view class="li">
+            <view class="li-item">右后纵梁</view>
+            <view class="li-item">
+              <image src="../../images/succ.png" mode="aspectFill"></image>
+            </view>
+        </view>
+        <view class="li">
+            <view class="li-item">右后减震器悬挂部位</view>
+            <view class="li-item">
+              <image src="../../images/succ.png" mode="aspectFill"></image>
+            </view>
+        </view>
+        <view class="li">
+            <view class="li-item">左底大边</view>
+            <view class="li-item">
+              <image src="../../images/succ.png" mode="aspectFill"></image>
+            </view>
+        </view>
+        <view class="li">
+            <view class="li-item">左后减震器悬挂部位</view>
+            <view class="li-item">
+              <image src="../../images/succ.png" mode="aspectFill"></image>
+            </view>
+        </view>
+        <view class="li">
+            <view class="li-item">前防火墙</view>
+            <view class="li-item">
+              <image src="../../images/succ.png" mode="aspectFill"></image>
+            </view>
+        </view>
+        <view class="li">
+            <view class="li-item">左前纵梁</view>
+            <view class="li-item">
+              <image src="../../images/succ.png" mode="aspectFill"></image>
+            </view>
+        </view>
+        <view class="li">
+            <view class="li-item">左A柱</view>
+            <view class="li-item">
+              <image src="../../images/succ.png" mode="aspectFill"></image>
+            </view>
+        </view>
+        <view class="li">
+            <view class="li-item">右B柱</view>
+            <view class="li-item">
+              <image src="../../images/succ.png" mode="aspectFill"></image>
+            </view>
+        </view>
+        <view class="li">
+            <view class="li-item">左前减震器悬挂部位</view>
+            <view class="li-item">
+              <image src="../../images/succ.png" mode="aspectFill"></image>
+            </view>
+        </view>
+        <view class="li">
+            <view class="li-item">左B柱</view>
+            <view class="li-item">
+              <image src="../../images/succ.png" mode="aspectFill"></image>
+            </view>
+        </view>
+        <view class="li">
+            <view class="li-item">后围板</view>
+            <view class="li-item">
+              <image src="../../images/succ.png" mode="aspectFill"></image>
+            </view>
+        </view>
+        <view class="li">
+            <view class="li-item">右前纵梁</view>
+            <view class="li-item">
+              <image src="../../images/succ.png" mode="aspectFill"></image>
+            </view>
+        </view>
+        <view class="li">
+            <view class="li-item">后防火墙</view>
+            <view class="li-item">
+              <image src="../../images/succ.png" mode="aspectFill"></image>
+            </view>
+        </view>
+        <view class="li">
+            <view class="li-item">前横梁</view>
+            <view class="li-item">
+              <image src="../../images/succ.png" mode="aspectFill"></image>
+            </view>
+        </view>
+        <view class="li">
+            <view class="li-item">龙门架</view>
+            <view class="li-item">
+              <image src="../../images/succ.png" mode="aspectFill"></image>
+            </view>
+        </view>
+        <view class="li">
+            <view class="li-item">车顶右边梁</view>
+            <view class="li-item">
+              <image src="../../images/succ.png" mode="aspectFill"></image>
+            </view>
+        </view>
+    </view>
+</view>
+
+<view id="view2">
+    <view class="title" id='view2'>车身外观</view>
+    <view class="allcon">
+        <view class="li">
+            <view class="li-item">左后翼子板</view>
+            <view class="li-item">
+              <image src="../../images/succ.png" mode="aspectFill"></image>
+            </view>
+        </view>
+        <view class="li">
+            <view class="li-item">右前轮</view>
+            <view class="li-item">
+              <image src="../../images/succ.png" mode="aspectFill"></image>
+            </view>
+        </view>
+        <view class="li">
+            <view class="li-item">雾灯（左）</view>
+            <view class="li-item">
+              <image src="../../images/succ.png" mode="aspectFill"></image>
+            </view>
+        </view>
+        <view class="li">
+            <view class="li-item">左后视镜</view>
+            <view class="li-item">
+              <image src="../../images/succ.png" mode="aspectFill"></image>
+            </view>
+        </view>
+        <view class="li">
+            <view class="li-item">右后车门</view>
+            <view class="li-item">
+              <image src="../../images/succ.png" mode="aspectFill"></image>
+            </view>
+        </view>
+        <view class="li">
+            <view class="li-item">左后轮</view>
+            <view class="li-item">
+              <image src="../../images/succ.png" mode="aspectFill"></image>
+            </view>
+        </view>
+        <view class="li">
+            <view class="li-item">雾灯（右）</view>
+            <view class="li-item">
+              <image src="../../images/succ.png" mode="aspectFill"></image>
+            </view>
+        </view>
+        <view class="li">
+            <view class="li-item">左前翼子板</view>
+            <view class="li-item">
+              <image src="../../images/succ.png" mode="aspectFill"></image>
+            </view>
+        </view>
+        <view class="li">
+            <view class="li-item">发动机舱盖表面</view>
+            <view class="li-item">
+              <image src="../../images/succ.png" mode="aspectFill"></image>
+            </view>
+        </view>
+        <view class="li">
+            <view class="li-item">右后视镜</view>
+            <view class="li-item">
+              <image src="../../images/succ.png" mode="aspectFill"></image>
+            </view>
+        </view>
+        <view class="li">
+            <view class="li-item">左后车门</view>
+            <view class="li-item">
+              <image src="../../images/succ.png" mode="aspectFill"></image>
+            </view>
+        </view>
+        <view class="li">
+            <view class="li-item">轮胎（右后）</view>
+            <view class="li-item">
+              <image src="../../images/succ.png" mode="aspectFill"></image>
+            </view>
+        </view>
+        <view class="li">
+            <view class="li-item">行李箱盖附件</view>
+            <view class="li-item">
+              <image src="../../images/succ.png" mode="aspectFill"></image>
+            </view>
+        </view>
+        <view class="li">
+            <view class="li-item">左前车门</view>
+            <view class="li-item">
+              <image src="../../images/succ.png" mode="aspectFill"></image>
+            </view>
+        </view>
+        <view class="li">
+            <view class="li-item">四门附件</view>
+            <view class="li-item">
+              <image src="../../images/succ.png" mode="aspectFill"></image>
+            </view>
+        </view>
+        <view class="li">
+            <view class="li-item">行李箱内侧</view>
+            <view class="li-item">
+              <image src="../../images/succ.png" mode="aspectFill"></image>
+            </view>
+        </view>
+        <view class="li">
+            <view class="li-item">车顶附件</view>
+            <view class="li-item">
+              <image src="../../images/succ.png" mode="aspectFill"></image>
+            </view>
+        </view>
+        <view class="li">
+            <view class="li-item">右前翼子板</view>
+            <view class="li-item">
+              <image src="../../images/succ.png" mode="aspectFill"></image>
+            </view>
+        </view>
+        <view class="li">
+            <view class="li-item">车顶</view>
+            <view class="li-item">
+              <image src="../../images/succ.png" mode="aspectFill"></image>
+            </view>
+        </view>
+        <view class="li">
+            <view class="li-item">轮胎（左后）</view>
+            <view class="li-item">
+              <image src="../../images/succ.png" mode="aspectFill"></image>
+            </view>
+        </view>
+        <view class="li">
+            <view class="li-item">右后轮</view>
+            <view class="li-item">
+              <image src="../../images/succ.png" mode="aspectFill"></image>
+            </view>
+        </view>
+        <view class="li">
+            <view class="li-item">行李箱盖</view>
+            <view class="li-item">
+              <image src="../../images/succ.png" mode="aspectFill"></image>
+            </view>
+        </view>
+        <view class="li">
+            <view class="li-item">后尾灯</view>
+            <view class="li-item">
+              <image src="../../images/succ.png" mode="aspectFill"></image>
+            </view>
+        </view>
+        <view class="li">
+            <view class="li-item">右后翼子板</view>
+            <view class="li-item">
+              <image src="../../images/succ.png" mode="aspectFill"></image>
+            </view>
+        </view>
+        <view class="li">
+            <view class="li-item">后保险杠</view>
+            <view class="li-item">
+              <image src="../../images/succ.png" mode="aspectFill"></image>
+            </view>
+        </view>
+        <view class="li">
+            <view class="li-item">后保险杠附件</view>
+            <view class="li-item">
+              <image src="../../images/succ.png" mode="aspectFill"></image>
+            </view>
+        </view>
+        <view class="li">
+            <view class="li-item">四门风窗玻璃</view>
+            <view class="li-item">
+              <image src="../../images/succ.png" mode="aspectFill"></image>
+            </view>
+        </view>
+        <view class="li">
+            <view class="li-item">挡泥板罩及内衬</view>
+            <view class="li-item">
+              <image src="../../images/succ.png" mode="aspectFill"></image>
+            </view>
+        </view>
+        <view class="li">
+            <view class="li-item">前大灯</view>
+            <view class="li-item">
+              <image src="../../images/succ.png" mode="aspectFill"></image>
+            </view>
+        </view>
+        <view class="li">
+            <view class="li-item">轮胎（右前）</view>
+            <view class="li-item">
+              <image src="../../images/succ.png" mode="aspectFill"></image>
+            </view>
+        </view>
+        <view class="li">
+            <view class="li-item">右前车门</view>
+            <view class="li-item">
+              <image src="../../images/succ.png" mode="aspectFill"></image>
+            </view>
+        </view>
+        
+    </view>
+</view>
+    
+</scroll-view>
+</view> -->

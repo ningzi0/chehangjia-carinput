@@ -1,0 +1,88 @@
+<view class="carinputList">
+    <view class="carinputListCon">
+        <view class="ul">
+          
+            <view class="li">
+                <view class="item left">
+                  <navigator url="/pages/carinput/carinput">
+                    <view class="title">奥迪A3</view>
+                      <view class="p">2017款 Sportback 35 TFSI 进取型</view>
+                      <view class="tips">
+                        <view class="span">[tips:录入]基本信息(01)不完整，缺少必选照片[左前45°]</view>
+                      </view>
+                      <view class="time">
+                          <view class="p">[最后修改时间]：2021-08-19</view>
+                          <view class="p">[预约审车时间]：2021-08-19</view>
+                      </view>
+                  </navigator>
+                </view>
+                <view class="item right">
+                  <button>上传</button>
+                  <button bindtap="showPopup">预约审车</button>
+                  <button class="del">删除</button>
+                </view>
+            </view>
+            
+        </view>
+
+
+        <view class="btn">
+          <navigator url="/pages/carinput2/carinput2">录入车辆</navigator>
+        </view>
+
+    </view>
+</view>
+
+
+
+<!-- 弹出框 -->
+<!-- 弹出框 -->
+<view class="wx-popup" hidden="{{flag}}">
+  <view class='popup-container'>
+    <view class="wx-popup-title">审核类型选择</view>
+    <view class="wx-popup-con">
+      <view class="condition-nav" wx:if="{{!historyShow}}">
+        <view wx:for="{{conditionList}}" wx:for-item="info" data-item="{{info.id}}" wx:key="item" bindtap="SyntheSize" class='li item {{activeItem == info.id ? "active": ""}}' >{{info.name}}</view>
+      </view>
+    </view>
+    
+    <view class="li shencheTime">
+      <picker mode="date" value="{{date}}" start="1000-09-01" end="9999-99-99" bindchange="bindDateChange">
+          {{date}} 
+      </picker>
+    </view>
+
+    <view class="wx-popup-btn">
+      <text class="btn-no" bindtap='_error'>取消</text>
+      <text class="btn-ok" bindtap='_success'>确定</text>
+    </view>
+  </view>
+</view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

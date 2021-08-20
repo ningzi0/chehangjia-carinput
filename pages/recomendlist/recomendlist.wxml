@@ -1,0 +1,376 @@
+<!--pages/list/list.wxml-->
+
+<!-- 搜索车辆 -->
+<!-- <view class="search">
+  <input type="search" placeholder="{{vlaue}}" placeholder-style="color:#333" bindconfirm="searchSumbit"></input>
+  <image src="../../images/sear.png"></image>
+</view> -->
+
+
+<!-- 筛选 -->
+<view class="screen">
+  <view class="ul">
+    <view class="li">
+      <picker bindchange="bindSortChange" value="{{indexpx}}" range="{{array}}">{{array[indexpx]}}</picker>
+      <!-- <text>智能排序</text> -->
+      <image src="../../images/down.png"></image>
+    </view>
+    <!--<view class="li location">
+       <picker bindchange="bindPickerChange" value="{{locationIndex}}" range="{{areaName}}">
+        <image src="../../images/location.png"></image>
+        <view class="text">{{areaName[locationIndex]}}</view>
+      </picker> -->
+    <!-- <text>智能排序</text> -->
+    <!-- <image src="../../images/down.png"></image>
+    </view> -->
+    <view class="li" data-index="1" bindtap='chooseSezi'>
+      <text>品牌</text>
+      <image src="../../images/down.png"></image>
+    </view>
+    <view class="li" data-index="2" bindtap="chooseSezi">
+      <text>价格</text>
+      <image src="../../images/down.png"></image>
+    </view>
+    <!-- <view class="li" data-index="3" bindtap="chooseSezi">
+      <text>筛选</text>
+      <image src="../../images/down.png"></image>
+    </view> -->
+  </view>
+</view>
+
+
+<!-- 列表内容 -->
+
+<view class="listCon">
+  <scroll-view class="swiper_con scroll-view-container" bindtouchstart="start_fn" bindtouchend="end_fn" scroll-y="true" lower-threshold='30' upper-threshold='0' enable-back-to-top="true">
+    <view class=" ul content-view">
+      <block wx:for="{{carList}}">
+        <view class="li">
+          <navigator url="../recomendcarshow/recomendcarshow?id={{item.id}}">
+            <view class="img">
+              <image src="{{press256pic}}/{{item.carAppearanceImgs}}" mode="widthFix"></image>
+            </view>
+            <view class="text">
+              <view class="h3">{{item.title}}</view>
+              <view class="data">行驶{{item.carMileage}}万公里</view>
+              <view class="price">
+                <!-- <text class="del">指导价:270.8万</text> -->
+                <text class="carprice">￥{{item.carPrice}}万</text>
+              </view>
+            </view>
+          </navigator>
+        </view>
+      </block>
+      <view class="load" wx:if="{{currentPage!=totalPage}}">上滑加载更多...</view>
+    </view>
+  </scroll-view>
+</view>
+
+
+
+<!-- 品牌选择 -->
+<!--隐藏区域  -->
+<view class='maskLayer' wx:if="{{chooseSize}}" bindtap='hideModal'></view>
+<view class='choose' wx:if="{{index==1}}" animation='{{animationData}}'>
+  <view class="chooseTit">选择品牌</view>
+  <view class="Letter">
+    <view class="li" data-index="notLimt" bindtap="goToNode">*</view>
+    <block wx:for="{{brandAlphabets}}">
+      <view class="li " data-index="{{item.alphabet}}" bindtap="goToNode" wx:if="{{item.alphabet!='hot'}}">{{item.alphabet}}</view>
+    </block>
+  </view>
+  <scroll-view class="chooseContent" scroll-into-view="{{intoindex}}" scroll-y>
+    <!-- 字母筛选 -->
+ 
+    <view class="allbrand" id="notLimt">
+    <view class="brandContent">
+        <view class="brandCon">
+          <view class="ul">
+            <view class="li" bindtap="getBrand"data-brand="">
+              <text>不限品牌</text>
+            </view>
+          </view>
+        </view>
+      </view>
+      <!-- 全部品牌 -->
+      <view class="brandContent">
+        <block wx:for="{{brandAlphabets}}">
+          <view class="title" wx:if="{{item.alphabet!='hot'}}">{{item.alphabet}}</view>
+          <view class="brandCon" id="{{item.alphabet}}">
+            <view class="ul">
+              <block wx:for="{{brandLists[item.alphabet]}}">
+                <view class="li" bindtap="getBrand" data-brand="{{item.brandName}}">
+                  <view class="img">
+                    <image src="{{item.brandLogo}}"></image>
+                  </view>
+                  <text>{{item.brandName}}</text>
+                </view>
+              </block>
+            </view>
+          </view>
+        </block>
+      </view>
+    </view>
+
+  </scroll-view>
+
+</view>
+
+
+<!-- 价格选持 -->
+<view class='choose' wx:if="{{index==2}}" animation='{{animationData}}'>
+  <view class="chooseTit">选择价格</view>
+  <view class="pricechoose">
+    <view class="ul">
+      <block wx:for="{{priceList}}">
+        <view class="li" data-scope="{{item.scope}}" bindtap="getPrcice" hover-class="active">
+          <text>{{item.text}}</text>
+        </view>
+      </block>
+    </view>
+
+
+
+    <!-- 自定义价格 -->
+    <view class="priceChooseCon">
+      <view class="priceC-title">
+        <view class="priceCleft">
+          自定义价格
+          <text>(单位：万)</text>
+        </view>
+        <view class="priceCright">
+          <navigator class="btn" bindtap="diyPrice">确定</navigator>
+        </view>
+      </view>
+    </view>
+
+
+
+    <!-- 自定义价格滑块 -->
+
+    <view class='sliderHCon'>
+      <!-- <view class='showMoney'>
+            <text class='MoneyValue'>￥{{min}}</text>
+            <text class='MoneyValue'>￥{{max}}</text>
+        </view> -->
+
+      <view class='twoSlider'>
+        <view class='select-construct'>
+          <view class='select-area'>
+            <view class='slider-container'>
+              <view class='leftSliderPrice sliderPrice' style='left:{{leftSliderPriceWidthX}};'>
+                <view class='sliderView'>
+                  ￥{{slider1Value*scale}}万
+                </view>
+              </view>
+              <slider style='width:{{slider1W+"%"}}' class='slider-left' min='{{min}}' max='{{slider1Max}}' color='#76919c' selected-color='#e5e5e5' bindchanging='changing' catchtouchstart='changeStart' bindchange='changed' data-idx='1'></slider>
+              <view class='rightSliderPrice sliderPrice' style='right:{{rightSliderPriceWidthX}};'>
+                <view class='sliderView'>
+                  ￥{{slider2Value*scale}}万以下
+                </view>
+              </view>
+              <slider wx:if='{{!change}}' style='width:{{slider2W+"%"}}' class='slider-right' min='{{slider2Min}}' max='{{max}}' color='#e5e5e5' selected-color='#76919c' bindchanging='changing' catchtouchstart='changeStart' bindchange='changed' data-idx='2'></slider>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+
+
+
+  </view>
+</view>
+
+<!-- 筛选 -->
+<view class='choose' wx:if="{{index==3}}" animation='{{animationData}}'>
+  <view class="chooseTit">筛选</view>
+  <view class="chooseScreen chooseContent">
+    <view class="cartype c-ScreenCon">
+      <view class="tit">车型</view>
+      <view class="ul">
+        <block wx:for="{{seriesList}}">
+          <view class="li {{item.active==1?'on':''}}" bindtap="select" data-index="{{index}}" data-type="seriesList" data-key="kind">
+            <view class="ico">
+              <image src="{{item.src}}" mode="aspectFill"></image>
+            </view>
+            <view class="text">{{item.text}}</view>
+          </view>
+        </block>
+      </view>
+    </view>
+
+    <!-- <view class="c-ScreenCon objective">
+      <view class="tit">购车目的</view>
+      <view class="pricechoose ">
+        <view class="ul">
+          <view class="li on">
+            <text>家用/带娃</text>
+          </view>
+          <view class="li">
+            <text>练手/代步/通勤</text>
+          </view>
+          <view class="li">
+            <text>拉人/拉货</text>
+          </view>
+          <view class="li">
+            <text>商务接待</text>
+          </view>
+          <view class="li">
+            <text>章显个性</text>
+          </view>
+          <view class="li">
+            <text>长途出行</text>
+          </view>
+        </view>
+      </view>
+    </view> -->
+
+    <view class="c-ScreenCon objective">
+      <view class="tit">变速箱</view>
+      <view class="pricechoose ">
+        <view class="ul">
+          <block wx:for="{{gearList}}">
+            <view class="li {{item.active==1?'active':''}}" bindtap="select" data-index="{{index}}" data-type="gearList" data-key="geartype">
+              <text>{{item.text}}</text>
+            </view>
+          </block>
+        </view>
+      </view>
+    </view>
+
+
+    <view class="c-ScreenCon objective">
+      <view class="tit">车龄要求</view>
+      <view class="pricechoose ">
+        <view class="ul">
+          <block wx:for="{{yearList}}">
+            <view class="li {{item.active==1?'active':''}}" bindtap="select" data-index="{{index}}" data-type="yearList" data-key="year">
+              <text>{{item.text}}</text>
+            </view>
+          </block>
+        </view>
+      </view>
+    </view>
+
+    <view class="c-ScreenCon objective">
+      <view class="tit">行驶里程</view>
+      <view class="pricechoose ">
+        <view class="ul">
+          <block wx:for="{{meterList}}">
+            <view class="li {{item.active==1?'active':''}}" bindtap="select" data-index="{{index}}" data-type="meterList" data-key="meter">
+              <text>{{item.text}}</text>
+            </view>
+          </block>
+        </view>
+      </view>
+    </view>
+
+    <view class="c-ScreenCon objective">
+      <view class="tit">排量(L)</view>
+      <view class="pricechoose ">
+        <view class="ul">
+          <block wx:for="{{dp}}">
+            <view class="li {{item.active==1?'active':''}}" bindtap="select" data-index="{{index}}" data-type="dp" data-key="dp">
+              <text>{{item.text}}</text>
+            </view>
+          </block>
+        </view>
+      </view>
+    </view>
+
+    <!-- <view class="c-ScreenCon objective">
+      <view class="tit">座位数</view>
+      <view class="pricechoose ">
+        <view class="ul">
+          <view class="li">
+            <text>2座</text>
+          </view>
+          <view class="li">
+            <text>4座</text>
+          </view>
+          <view class="li">
+            <text>5座</text>
+          </view>
+          <view class="li">
+            <text>6座</text>
+          </view>
+          <view class="li">
+            <text>7座以上</text>
+          </view>
+        </view>
+      </view>
+    </view> -->
+
+    <view class="c-ScreenCon objective">
+      <view class="tit">排放标准</view>
+      <view class="pricechoose ">
+        <view class="ul">
+          <block wx:for="{{emission}}">
+            <view class="li {{item.active==1?'active':''}}" bindtap="select" data-index="{{index}}" bindtap="select" data-index="{{index}}" data-type="emission" data-key="emission">
+              <text>{{item.text}}</text>
+            </view>
+          </block>
+        </view>
+      </view>
+    </view>
+
+    <!-- <view class="c-ScreenCon objective">
+      <view class="tit">燃油类型</view>
+      <view class="pricechoose ">
+        <view class="ul">
+          <view class="li">
+            <text>汽油</text>
+          </view>
+          <view class="li">
+            <text>柴油</text>
+          </view>
+          <view class="li">
+            <text>电动</text>
+          </view>
+          <view class="li">
+            <text>油电混合</text>
+          </view>
+          <view class="li">
+            <text>其他</text>
+          </view>
+        </view>
+      </view>
+    </view> -->
+
+    <view class="c-ScreenCon objective">
+      <view class="tit">驱动类型</view>
+      <view class="pricechoose ">
+        <view class="ul">
+          <block wx:for="{{dirmodel}}">
+            <view class="li {{item.active==1?'active':''}}" bindtap="select" data-index="{{index}}" data-type="dirmodel" data-key="dirmodel">
+              <text>{{item.text}}</text>
+            </view>
+          </block>
+        </view>
+      </view>
+    </view>
+
+
+    <view class="c-ScreenCon objective">
+      <view class="tit">国别</view>
+      <view class="pricechoose ">
+        <view class="ul">
+          <block wx:for="{{vehicleorigin}}">
+            <view class="li {{item.active==1?'active':''}}" bindtap="select" data-index="{{index}}" data-type="vehicleorigin" data-key="vehicleorigin">
+              <text>{{item.text}}</text>
+            </view>
+          </block>
+        </view>
+      </view>
+    </view>
+  </view>
+
+
+  <!-- 按钮 -->
+  <view class="sub">
+    <view class="reset" bindtap="reset">重置</view>
+    <view class="submit" bindtap="query">确定</view>
+  </view>
+
+</view>

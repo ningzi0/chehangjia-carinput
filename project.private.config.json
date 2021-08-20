@@ -1,0 +1,119 @@
+{
+  "setting": {},
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "name": "个人中心",
+          "pathName": "pages/my/my",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "车辆录入-基本信息",
+          "pathName": "pages/carinput/carinput",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "车辆录入-车辆配置",
+          "pathName": "pages/carinput2/carinput2",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "其他重要配置",
+          "pathName": "pages/carinput2_peizhi/carinput2_peizhi",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "质检报告-车辆骨架",
+          "pathName": "pages/carinput3/carinput3",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "质检报告-车辆外观",
+          "pathName": "pages/carinput4/carinput4",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "质检报告-车辆引擎舱",
+          "pathName": "pages/carinput5/carinput5",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "质检报告-车辆驾驶舱",
+          "pathName": "pages/carinput6/carinput6",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "质检报告-车辆启动检查",
+          "pathName": "pages/carinput7/carinput7",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "质检报告-车辆路试检查(08)",
+          "pathName": "pages/carinput8/carinput8",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "质检报告-车辆底盘检查(09)",
+          "pathName": "pages/carinput9/carinput9",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "质检报告-车辆功能性零部件(10)",
+          "pathName": "pages/carinput10/carinput10",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "车辆照片",
+          "pathName": "pages/carinput11/carinput11",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "其他法定凭证",
+          "pathName": "pages/carinput_other/carinput_other",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "已录入车辆",
+          "pathName": "pages/carinput_list/carinput_list",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "测试",
+          "pathName": "pages/test/test",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "质检报告",
+          "pathName": "pages/report/report",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

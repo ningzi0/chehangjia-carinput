@@ -1,0 +1,183 @@
+<!--pages/my/my.wxml-->
+<import src="../../template/nav.wxml" />
+<view class="content">
+  <!-- 个人信息开始 -->
+  <view class="myinfo">
+    <view class="myinfo-item myinfo-con">
+      <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+      <block wx:else>
+        <image src="{{userInfo.avatarUrl}}" mode="scaleToFill"></image>
+        <text>{{userInfo.nickName}}</text>
+      </block>
+    </view>
+    <!-- <view class="myinfo-item myinfo-btn">
+      <view class="myinfo-b-border">
+        <text>个人资料</text>
+        <image src="../../images/my/my-icoright.png"></image>
+      </view>
+    </view> -->
+  </view>
+  <!-- 个人信息结束 -->
+
+  <!-- 个人卡片开始 -->
+  <!-- <view class="my-card">
+    <view class="my-cardCon">
+      <view class="my-carditem">
+        <navigator>
+          <view class="my-cardNum">0</view>
+          <text>我的预约</text>
+        </navigator>
+      </view>
+      <view class="my-carditem">
+        <navigator>
+          <view class="my-cardNum">0</view>
+          <text>我的卖车</text>
+        </navigator>
+      </view>
+      <view class="my-carditem">
+        <navigator>
+          <view class="my-cardNum">0</view>
+          <text>我的租车</text>
+        </navigator>
+      </view>
+      <view class="my-carditem">
+        <navigator>
+          <view class="my-cardNum">0</view>
+          <text>优惠券</text>
+        </navigator>
+      </view>
+    </view>
+  </view> -->
+  <!-- 个人卡片结束 -->
+
+
+  <!-- 我的列表开始 -->
+  <view class="my-list">
+    <!-- <view class="li">
+      <navigator>
+        <view class="my-list-item my-listLeft">
+          <image src="../../images/my/my-ico1.png" mode="scaleToFill"></image>
+          <text>我的保险</text>
+        </view>
+        <view class="my-list-item my-listRight">
+          <text class="my-list-num"></text>
+          <image src="../../images/my/my-icoright2.png"></image>
+        </view>
+      </navigator>
+    </view> -->
+    <view class="li">
+      <navigator url="../lately/lately">
+        <view class="my-list-item my-listLeft">
+          <image src="../../images/my/my-ico2.png" mode="scaleToFill"></image>
+          <text>浏览记录</text>
+        </view>
+        <view class="my-list-item my-listRight">
+          <text class="my-list-num"></text>
+          <image src="../../images/my/my-icoright2.png"></image>
+        </view>
+      </navigator>
+    </view>
+    <view class="li">
+      <navigator>
+        <view class="my-list-item my-listLeft">
+          <image src="../../images/my/contact-ico.png" mode="scaleToFill"></image>
+          <text>联系我们</text>
+        </view>
+        <view class="my-list-item my-listRight">
+          <text class="my-list-num"></text>
+          <image src="../../images/my/my-icoright2.png"></image>
+        </view>
+      </navigator>
+    </view>
+    <view class="li">
+      <navigator url="/pages/carinput/carinput" open-type="navigateTo">
+        <view class="my-list-item my-listLeft">
+          <image src="../../images/my/waiguan.png" mode="scaleToFill"></image>
+          <text>车辆录入</text>
+        </view>
+        <view class="my-list-item my-listRight">
+          <text class="my-list-num"></text>
+          <image src="../../images/my/my-icoright2.png"></image>
+        </view>
+      </navigator>
+    </view>
+    
+    <view class="li">
+      <navigator url="/pages/carinput_list/carinput_list">
+        <view class="my-list-item my-listLeft">
+          <image src="../../images/my/waiguan.png" mode="scaleToFill"></image>
+          <text>已录入车辆</text>
+        </view>
+        <view class="my-list-item my-listRight">
+          <text class="my-list-num"></text>
+          <image src="../../images/my/my-icoright2.png"></image>
+        </view>
+      </navigator>
+    </view>
+
+    <view class="li">
+      <navigator url="/pages/Invoicing/Invoicing">
+        <view class="my-list-item my-listLeft">
+          <image src="../../images/my/fapiao.png" mode="scaleToFill"></image>
+          <text>待开票</text>
+        </view>
+        <view class="my-list-item my-listRight">
+          <text class="my-list-num"></text>
+          <image src="../../images/my/my-icoright2.png"></image>
+        </view>
+      </navigator>
+    </view>
+    <!-- <view class="li">
+      <navigator>
+        <view class="my-list-item my-listLeft">
+          <image src="../../images/my/my-ico3.png" mode="scaleToFill"></image>
+          <text>我的砍价</text>
+        </view>
+        <view class="my-list-item my-listRight">
+          <text class="my-list-num"></text>
+          <image src="../../images/my/my-icoright2.png"></image>
+        </view>
+      </navigator>
+    </view> -->
+    <!-- <view class="li">
+      <navigator>
+        <view class="my-list-item my-listLeft">
+          <image src="../../images/my/my-ico4.png" mode="scaleToFill"></image>
+          <text>意见反馈</text>
+        </view>
+        <view class="my-list-item my-listRight">
+          <text class="my-list-num"></text>
+          <image src="../../images/my/my-icoright2.png"></image>
+        </view>
+      </navigator>
+    </view> -->
+    <!-- <view class="li">
+      <navigator>
+        <view class="my-list-item my-listLeft">
+          <image src="../../images/my/my-ico5.png" mode="scaleToFill"></image>
+          <text>关于我们</text>
+        </view>
+        <view class="my-list-item my-listRight">
+          <text class="my-list-num"></text>
+          <image src="../../images/my/my-icoright2.png"></image>
+        </view>
+      </navigator>
+    </view> -->
+  </view>
+  <!-- 我的列表结束 -->
+  <!-- 联系我们开始 -->
+  <!-- <view class="contact" bindtap="callPhone">
+    <navigator>
+      <image src="../../images/my/contact-ico.png"></image>
+      <text>联系我们</text>
+    </navigator>
+  </view> -->
+
+  <view class="flex fix_nav_wp">
+    <block wx:for="{{navData}}" wx:key="">
+      <template is="FooterNav" data="{{...item}}" />
+    </block>
+  </view>
+  <!-- 联系我们结束 -->
+
+</view>

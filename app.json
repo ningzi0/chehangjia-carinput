@@ -1,0 +1,41 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/recomendlist/recomendlist",
+    "pages/recomendcarshow/recomendcarshow",
+    "pages/buycars/buycars",
+    "pages/list/list",
+    "pages/lately/lately",
+    "pages/my/my",
+    "pages/carshow/carshow",
+    "pages/all/all",
+    "pages/Presentation/Presentation",
+    "pages/out/out",
+    "pages/carinput/carinput" ,
+    "pages/carinput2/carinput2",
+    "pages/carinput3/carinput3",
+    "pages/carinput4/carinput4",
+    "pages/carinput5/carinput5",
+    "pages/carinput6/carinput6",
+    "pages/carinput7/carinput7",
+    "pages/carinput8/carinput8",
+    "pages/carinput9/carinput9",
+    "pages/carinput10/carinput10",
+    "pages/carinput11/carinput11",
+    "pages/carinput_other/carinput_other",
+    "pages/carinput2_peizhi/carinput2_peizhi",
+    "pages/carinput_list/carinput_list",
+    "pages/Invoicing/Invoicing",
+    "pages/report/report",
+    "pages/test/test"
+    
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#76919c",
+    "navigationBarTitleText": "车行家",
+    "navigationBarTextStyle": "white"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

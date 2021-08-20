@@ -1,0 +1,42 @@
+/* pages/nav/nav.wxss */
+
+.nav {
+  flex: 1;
+  width: 100%;
+  text-align: center;
+  background: #0000;
+  z-index: 9999;
+  padding: 3pt;
+  position: relative;
+}
+
+.nav image {
+  width: 25pt;
+  height: 25pt;
+  display: block;
+  margin: 0 auto;
+  margin-top: 1pt;
+}
+
+.nav .active_image {
+  width: 100pt;
+  height: 100pt;
+  display: block;
+  margin: 0 auto;
+  margin-top: 1pt;
+  position: absolute;
+  bottom: -4pt;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.nav text {
+  color: #aeaeae;
+}
+
+.nav .active_txt {
+  color: #76919c;
+  padding-top: 1em;
+  display: block;
+  margin: 15pt auto 0;
+}

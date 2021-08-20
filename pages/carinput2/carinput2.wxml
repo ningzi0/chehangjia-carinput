@@ -1,0 +1,119 @@
+<!--pages/carinput/carinput.wxml-->
+<view class="carinput">
+
+<view class="carinputContent">
+
+  <view class="ul">
+    <view class="li">
+          <text class="item left">车身颜色</text>
+          <view class="item right">
+              <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+                  {{array[index]}}<image src="/images/my/down.png" mode="widthFill"></image>
+              </picker>
+         </view>
+      </view>
+    <view class="li">
+          <text class="item left">表显里程(万公里)</text>
+          <input type="text" class="item right" placeholder="未填写" />
+      </view>
+      <view class="li">
+          <text class="item left">推定里程(万公里)</text>
+          <input type="text" class="item right" placeholder="未填写" />
+      </view>
+      <view class="li">
+          <text class="item left">燃油标号</text>
+          <view class="item right">
+              <picker bindchange="bindPickerChange2" value="{{index2}}" range="{{array2}}">
+                  {{array2[index2]}}<image src="/images/my/down.png" mode="widthFill"></image>
+              </picker>
+          </view>
+      </view>
+      <view class="li">
+          <text class="item left">排量(L)</text>
+          <input type="text" class="item right" placeholder="未填写" />
+      </view>
+      <view class="li">
+          <text class="item left">缸数</text>
+          <input type="text" class="item right" placeholder="未填写" />
+      </view>
+      <view class="li">
+          <text class="item left">发动机功率(KW)</text>
+          <input type="text" class="item right" placeholder="未填写" />
+      </view>
+      <view class="li">
+          <text class="item left">排放标准</text>
+          <view class="item right">
+              <picker bindchange="bindPickerChange3" value="{{index3}}" range="{{array3}}">
+                  {{array3[index3]}}<image src="/images/my/down.png" mode="widthFill"></image>
+              </picker>
+          </view>
+      </view>
+      <view class="li">
+          <text class="item left">变速箱类型</text>
+          <view class="item right">
+              <picker bindchange="bindPickerChange4" value="{{index4}}" range="{{array4}}">
+                  {{array4[index4]}}<image src="/images/my/down.png" mode="widthFill"></image>
+              </picker>
+          </view>
+      </view>
+      <view class="li">
+          <text class="item left">安全气囊</text>
+          <view class="item right">
+              <picker bindchange="bindPickerChange5" value="{{index5}}" range="{{array5}}">
+                  {{array5[index5]}}<image src="/images/my/down.png" mode="widthFill"></image>
+              </picker>
+          </view>
+      </view>
+      <view class="li">
+          <text class="item left"> 驱动方式</text>
+          <view class="item right">
+              <picker bindchange="bindPickerChange6" value="{{index6}}" range="{{array6}}">
+                  {{array6[index6]}}<image src="/images/my/down.png" mode="widthFill"></image>
+              </picker>
+          </view>
+      </view>
+      <view class="li">
+          <text class="item left">ABS</text>
+          <view class="item right">
+              <switch checked/>
+          </view>
+      </view>
+      <view class="li">
+          <text class="item left">轮毂材质</text>
+          <view class="item right">
+              <picker bindchange="bindPickerChange7" value="{{index7}}" range="{{array7}}">
+                  {{array7[index7]}}<image src="/images/my/down.png" mode="widthFill"></image>
+              </picker>
+          </view>
+      </view>
+      <view class="li">
+          <navigator url="/pages/carinput2_peizhi/carinput2_peizhi" class="item left">其他重要配置</navigator>
+      </view>
+
+
+  </view>
+
+</view>
+
+<view class="btn">
+<navigator url="/pages/report/report">下一步</navigator>
+</view>
+
+</view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

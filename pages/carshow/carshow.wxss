@@ -1,0 +1,217 @@
+/* pages/carshow/carshow.wxss */
+.carbanner {
+  height: 18em;
+  position: relative;
+}
+.carbanner swiper{
+  height: 18em;
+}
+.carbanner image{
+  width: 100%;
+  height:18em
+}
+swiper .wx-swiper-dots.wx-swiper-dots-horizontal{
+  margin-bottom: 50rpx;
+}
+
+swiper .wx-swiper-dot{
+  width: 13rpx;
+  display: inline-flex;
+  height: 13rpx;
+  margin-left: 2rpx;
+  justify-content: space-between;
+  border-radius: 50%;
+  display: none;
+}
+  
+swiper .wx-swiper-dot::before{
+  content: "";
+  flex-grow: 1;
+  background: rgba(255, 255, 255, 0.055);
+  border-radius: 8rpx;
+  
+  }
+  
+  swiper .wx-swiper-dot-active::before{
+    background:rgba(255, 208, 0, 0.9);
+  }
+  swiper .wx-swiper-dot-active{
+    width: 30rpx;
+  }
+
+  .carContent{
+    min-height: 10em;
+    background: #fff;
+    margin-top: -1.3em;
+    border-radius: 1em;
+    position: relative;
+    z-index: 2;
+    position: relative;
+  }
+
+.carContent .price{
+  background: #76919c;
+  font-weight: bold;
+  font-size: 0.9em;
+  color: #fff;
+  padding: 0.75em 1.2em;
+  border-radius: 10em;
+  position: absolute;
+  right: 8%;
+  top: -1.5em
+}
+.carContent{
+  padding: 0.75em;
+}
+.carTitCon{
+  font-size: 1.2em;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+}
+.cartips{
+  font-size: 0.75em;
+  color: #afafaf;
+}
+.carTitle{
+  padding-top: 1em;
+}
+
+.carlist .all navigator{
+  background-color: #76919c1f;
+  color: #3f565f;
+  font-size: 1em;
+  padding: 0.5em 1.35em;
+  border-radius: 5em;
+  margin: 0.5em 0;
+  text-align: center;
+}
+
+.carlist .ul{
+  width: 100%;
+  border-bottom: 1px solid #f6f6f6;
+  padding-bottom: 2.5em;
+  background: #76919c09;
+  margin-top: 1em;
+  position: relative;
+}
+.carlist .ul .li {
+  padding:1.5em 1em 0;
+  width: 40%;
+  display: inline-block;
+}
+.carlist .ul .li image{
+  width: 2em;
+  height: 2em;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 0.5em;
+}
+.carlist .ul .li .icotext{
+  display: inline-block;
+  vertical-align: middle;
+  text-align: left;
+}
+.carlist .ul .li .icotext text{
+  display: block;
+}
+.carlist .ul .li .icotext text:first-child{
+  color: #cfcfcf;
+  font-size: 0.75em;
+}
+.carlist .ul .li .icotext text:last-child{
+  font-size:1em ;
+}
+
+.describe{
+  padding: 1em 0;
+}
+
+.describe-title{
+  font-size: 0.9em;
+  color: #afafaf;
+  border-left: 5px solid #76919c;
+  padding-left: 0.5em;
+}
+.describe-con .p{
+  font-size: 0.8em;
+  line-height: 1.75;
+  margin: 0.75em 0;
+  text-align: justify;
+  color: #868686;
+}
+
+.reportCon{
+  background:#76919c09;
+  padding: 1em 1em 0;
+}
+.reportCon .li{
+  width: 30%;
+  text-align: center;
+  background:#76919c21;
+  display: inline-block;
+  margin-right:5% ;
+  margin-bottom: 5%;
+}
+.reportCon .li navigator{
+  padding: 1em 0;
+}
+.reportCon .li image{
+  width: 3em;
+  height: 3em;
+}
+
+.reportCon .li:nth-child(3n){
+  margin-right: 0;
+}
+
+
+.carsphoto .describe-title{
+  margin: 1.5em 0 1em;
+}
+.carsPhotoCon image{
+  width: 100%;
+  margin: 0.2em 0;
+  border-radius:0.3em ;
+}
+
+
+.footer{
+  width: 80%;
+  position: fixed;
+  background-color: rgb(247, 247, 247);
+  box-shadow: 0 0.2em 0.4em rgba(0,0,0,0.2);
+  bottom: 2%;
+  left: 50%;
+  transform: translate(-50%,0);
+  border-radius: 10em;
+  display: flex;
+}
+
+.footer navigator{
+  flex: 1;
+  text-align: center;
+  margin: 0;
+  padding: 0.75em 0.5em;
+}
+.footer navigator:first-child{
+  background-color: #ffae00;
+  color: #fff;
+  border-radius: 10em 0 0 10em;
+}
+.footer navigator:last-child{
+  border-radius: 0 10em 10em 0;
+}
+
+.imageCount {
+  width:120rpx;
+  height:50rpx;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius:40rpx;
+  line-height:50rpx;
+  color:#fff;
+  text-align:center;
+  font-size:26rpx;
+  position:absolute;
+  left:1em;
+  bottom:2em;
+}

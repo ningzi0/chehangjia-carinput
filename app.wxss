@@ -1,0 +1,362 @@
+/**app.wxss**/
+
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+}
+
+/* 全部参数 */
+
+.all {
+  padding: 1em;
+}
+
+.all .title {
+  text-align: center;
+  color: #fff;
+  padding: 0.75em 0;
+  background-color: #76919cf8;
+  font-size: 0.9em;
+}
+
+.allcon .li {
+  display: flex;
+  border-bottom: 1px solid #eee;
+  background-color: #76919c07;
+  font-size: 0.9em;
+}
+
+.allcon .li .li-item {
+  flex: 1;
+  padding: 0.75em;
+}
+
+.allcon .li .li-item:first-child {
+  color: #857e6e;
+}
+
+.allcon .li .li-item:last-child {
+  text-align: right;
+  color: #4a3d18;
+}
+
+.presentation image {
+  width: 1.4em;
+  height: 1.4em;
+}
+
+/* 隐藏滚动条 */
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+
+/* 车辆列表 */
+
+.hotcarsContent .ul .li {
+  padding: 1em;
+  border-bottom: 1px solid #eee;
+}
+
+.hotcarsContent .ul .li .img image {
+  width: 10em;
+  height: 10em;
+  display: block;
+}
+
+.hotcarsContent .ul .li .text, .hotcarsContent .ul .li .img {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.hotcarsContent .ul .li .text {
+  padding: 1em;
+  width: 50%;
+}
+
+.hotcarsContent .ul .li .text .h3 {
+  font-size: 0.85em;
+}
+
+.hotcarsContent .ul .li .text .data {
+  font-size: 0.75em;
+  color: #999;
+  margin-bottom: 1em;
+}
+
+.hotcarsContent .ul .li .text .price .del {
+  text-decoration: line-through;
+  color: #999;
+  font-size: 0.75em;
+}
+
+.hotcarsContent .ul .li .text .carprice {
+  display: block;
+  font-size: 1.5em;
+  font-weight: bold;
+  color: rgb(255, 102, 0);
+}
+
+/* 品牌选择 */
+
+.maskLayer {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 55;
+}
+
+.choose {
+  background-color: #fff;
+  position: fixed;
+  top: auto;
+  bottom: 0;
+  width: 100%;
+  height: 85vh;
+  border-radius: 0.5em 0.5em 0 0;
+  z-index: 66;
+  /* padding-bottom: 3em; */
+
+}
+
+
+.chooseContent {
+  overflow-y: scroll;
+  height: 90%;
+  /* -webkit-overflow-scrolling: touch */
+}
+
+.chooseTit {
+  text-align: center;
+  padding: 0.75em 0;
+  background-color: #76919c20;
+}
+
+.hotbrand {
+  padding: 0 1em;
+}
+
+.brandtitle {
+  font-size: 0.9em;
+  padding: 0.75em 0;
+}
+
+.hotbrandCon .ul .li {
+  text-align: center;
+  width: 19%;
+  display: inline-block;
+  margin-bottom: 1em;
+}
+
+.hotbrandCon .ul .li .ico image {
+  width: 2.3em;
+  height: 2.3em;
+}
+
+.hotbrandCon .ul .li .text {
+  font-size: 0.8em;
+  color: rgb(95, 95, 95);
+}
+
+.allbrand .title {
+  background-color: #76919c20;
+  padding: 0.3em 1em;
+  color: #76919c86;
+  font-size: 0.8em;
+}
+
+.brandCon .ul .li {
+  padding: 0.75em 1em;
+  font-size: 0.85em;
+}
+
+.brandCon .ul .li:hover {
+  background-color: #76919c12;
+}
+
+.brandCon .ul .li {
+  border-bottom: 1px solid #eee;
+}
+
+.brandCon .ul .li .img {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.brandCon .ul .li text {
+  display: inline-block;
+}
+
+.brandCon .ul .li .img image {
+  width: 2.3em;
+  height: 2.3em;
+}
+
+.Letter {
+  position: fixed;
+  right: 2%;
+  font-size: 0.85rem;
+  top: 50%;
+  transform: translate(0, -50%);
+  text-align: center;
+  width: 3em;
+  color: #76919c;
+  z-index: 9999999;
+}
+
+.fix_nav_wp {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  z-index: 99999;
+  background: #fff;
+  box-shadow: 0px 0px 20pt rgba(0, 0, 0, 0.1);
+}
+.hotcarsContent .ul .li .img{
+  position:relative;
+  overflow:hidden;
+}
+.cias{
+  position:absolute;
+  top:10%;
+  left:-29%;
+  width: 12em;
+  height: 2em;
+  background-color: rgba(255,136,0,0.6);
+  transform:rotate(-45deg);
+  font-size:0.65em;
+  color:#fff;
+  line-height:2em;
+  text-align: center;
+}
+
+
+
+
+/*===============================================车辆录入-基本信息=================================================*/
+/* pages/carinput/carinput.wxss */
+
+.carinput{
+  padding: 10rpx;
+  font-size: 28rpx;
+  background: #eee;
+}
+.carinputContent{
+  margin-bottom: 95rpx;
+}
+.carinput .ul{
+  /* border-bottom: 20rpx solid #eee;   */
+  margin-bottom: 20rpx;
+}
+.carinput .ul .li{
+  padding: 30rpx 20rpx;
+  border-bottom:1px solid #eee ;
+  display: flex;justify-content : space-between;
+  background: #fff;
+}
+.carinput .ul .li input{
+  text-align: right;
+}
+.licenseplate{
+  color: #f00;
+}
+.carinput .ul .li image{
+  width: 30rpx;
+  height: 30rpx;
+  position: relative;
+  top: 7rpx;
+}
+
+.btn{
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  left: 0;
+  z-index: 99;
+  padding: 10rpx;
+  background: #fff;
+  box-sizing: border-box;
+  box-shadow: 0 0 20rpx rgba(0,0,0,0.1);
+}
+.btn navigator,.btn .navigator{
+  padding: 20rpx 0;
+  background: rgb(255, 115, 0);
+  color: #fff;
+}
+
+.carinputContent .ul .li .upload{
+  display: inline-block;
+  vertical-align: middle;
+}
+.carinputContent .ul .li .pic{
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 10rpx;
+  position: relative;
+}
+
+.carinputContent .ul .li .pic text.delete-btn{
+  width: 30rpx;
+  height: 30rpx;
+  background: #f00;
+  color: #fff;
+  border-radius: 50%;
+  display: inline-block;
+  text-align: center;
+  line-height: 30rpx;
+  position: absolute;
+  right: -15rpx;
+  top: -7rpx;
+}
+.carinputContent .ul .li .weui-uploader__img{
+  width: 80rpx;
+  height: 80rpx;
+}
+.carinputContent .ul .li navigator{
+  display: block;
+  width: 100%;
+}
+
+
+.wx-switch-input{
+  width:50rpx !important;
+  height:35rpx !important;
+  background: #ff7300 !important;
+  border: #ff7300 !important;
+}
+/*白色样式（false的样式）*/
+.wx-switch-input::before{
+  width:50rpx !important;
+  height: 35rpx !important;
+}
+/* 中间的小圆球 */
+/*绿色样式（true的样式）*/
+.wx-switch-input::after{
+  width: 35rpx !important;
+  height: 35rpx !important;
+}
+.carinput .ul .li text.item{
+  flex: 1;
+}
+
+
+
+
+
+
+
+
+
+

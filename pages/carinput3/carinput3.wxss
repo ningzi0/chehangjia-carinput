@@ -1,0 +1,116 @@
+/* pages/carinput3/carinput3.wxss */
+.carinputContent label{
+  margin-right: 20rpx;
+}
+
+
+/* 弹出框 */
+.wx-popup {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, .5);
+}
+.popup-container {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 80%;
+  max-width: 600rpx;
+  box-sizing: bordre-box;
+  transform: translate(-50%, -50%); 
+  overflow: hidden;
+  background: #fff;
+}
+.wx-popup-title {
+  width: 100%;
+  padding: 20rpx;
+  text-align: center;
+  font-size: 30rpx;
+  box-sizing: border-box;
+}
+.wx-popup-con {
+  padding: 15rpx;
+  margin: 0 15rpx;
+}
+.wx-popup-btn {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 40rpx;
+}
+.wx-popup-btn text {
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  padding:15rpx;
+  background: #eee;
+  font-size: 30rpx;
+  text-align: center;
+  margin: 0 15rpx;
+}
+.wx-popup-con{
+  font-size: 30rpx;
+  border: 1px solid #eee;
+  text-align: left;
+}
+.wx-popup-con textarea{
+  width: 100%;
+  height: 150rpx;
+}
+
+.addimg{
+  font-size: 30rpx;
+  text-align: center;
+  padding: 20rpx;
+  margin: 15rpx;
+  border: 1px solid #eee;
+}
+
+.wx-popup-btn text.btn-ok{
+  background: rgb(255, 115, 0);
+  color: #fff;
+}
+.addimgContent .pic{
+  margin: 15rpx;
+  display: inline-block;
+  width: 28%;
+  position: relative;
+}
+.addimgContent .pic .delete-btn{
+  width: 30rpx;
+  height: 30rpx;
+  background: #f00;
+  color: #fff;
+  border-radius: 50%;
+  line-height: 30rpx;
+  text-align: center;
+  position: absolute;
+  top: -10rpx;
+  right: -10rpx;
+}
+.addimgContent .pic image{
+  width: 100%;
+  height: 150rpx;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

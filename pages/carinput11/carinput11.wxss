@@ -1,0 +1,7 @@
+/* pages/carinput11/carinput11.wxss */
+.carinputContent .title{
+  margin: 15rpx;
+}
+.carinputContent .title text{
+  color: #f00;
+}

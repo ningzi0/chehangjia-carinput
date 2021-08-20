@@ -1,0 +1,69 @@
+<!--pages/carinput/carinput.wxml-->
+<view class="carinput">
+
+<view class="carinputContent">
+  
+
+  <view class="ul">
+    <block wx:for="{{arr}}">
+      <view class="li">
+          <text class="item left">{{item.title}}</text>
+          <view class="item right">
+              <radio-group>
+                  <label class="radio normal"><radio value="r1" color="#ff7300"  checked="true"/>{{item.radio}}</label>
+                  <label class="radio abnormal" bindtap="showPopup"><radio value="r2" color="#ff7300" />{{item.radio2}}</label>
+              </radio-group>
+          </view>
+      </view>
+    </block>
+    <view class="li">
+          <text class="item left">车身外观检车备注</text>
+          <input type="text" class="item right" placeholder="未填写" />
+      </view>
+  </view>
+</view>
+
+<view class="btn">
+  <navigator url="/pages/report/report" open-type="navigateBack">保存并返回</navigator>
+</view>
+
+</view>
+
+<!-- 弹出框 -->
+<view class="wx-popup" hidden="{{flag}}">
+  <view class='popup-container'>
+    <view class="wx-popup-title">异常说明</view>
+    <view class="wx-popup-con">
+      <textarea name="" id="" placeholder="请输入异常说明"></textarea>
+    </view>
+    <view class="addimgContent">
+        <view class="addimg" bindtap="chooseImg">添加异常图片</view>
+        <view class='pic' wx:for="{{imgs}}" wx:for-item="item" wx:key="*this">
+            <image class='weui-uploader__img 'src="{{item}}" data-index="{{index}}" mode="aspectFill" bindtap="previewImg"> </image>
+            <!-- <icon type='cancel' class="delete-btn" data-index="{{index}}" catchtap="deleteImg"></icon> -->
+            <text class="delete-btn" data-index="{{index}}" catchtap="deleteImg">×</text>
+        </view>
+    </view>
+    <view class="wx-popup-btn">
+      <text class="btn-no" bindtap='_error'>取消</text>
+      <text class="btn-ok" bindtap='_success'>确定</text>
+    </view>
+  </view>
+</view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

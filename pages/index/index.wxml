@@ -1,0 +1,172 @@
+<import src="../../template/nav.wxml" />
+<view class="carbanner">
+  <swiper bindchange="swiperChange" indicator-dots="true" autoplay="true" indicator-color="white" indicator-active-color="#e0c185">
+    <block wx:for="{{imgUrls}}" wx:key="*this">
+      <swiper-item wx:key="*this">
+        <image src="{{imagesUrl}}/{{item.frontImg}}" class="slide-image" mode="widthFix" data-url="{{item.articleUrl}}" bindtap="getArticle" />
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+
+<!-- 搜索 -->
+<view class="searcard">
+  <view class="input">
+    <image src="../../images/search.png"></image>
+    <input type="text" placeholder="搜索您要的车" placeholder-style="color:#333" bindconfirm="searchSumbit"></input>
+  </view>
+</view>
+
+
+<!-- 卡片 -->
+<view class="card">
+  <view class="ul">
+    <view class="li" bindtap="gotoOldGoods">
+      <navigator>
+        <view class="ico">
+          <image src="../../images/maiche.png" mode="aspectFill"></image>
+        </view>
+        <view class="text">免费卖车</view>
+      </navigator>
+    </view>
+    <view class="li" bindtap="cancel">
+      <navigator>
+        <view class="ico">
+          <image src="../../images/gujia.png" mode="aspectFill"></image>
+        </view>
+        <view class="text">车辆估价</view>
+      </navigator>
+    </view>
+  </view>
+</view>
+
+
+
+<!-- 四卡片 -->
+<view class="four-card">
+  <view class="ul">
+    <view class="li" bindtap="cancel">
+      <view class="ico">
+        <image src="../../images/shenche.png"></image>
+      </view>
+      <view class="text">预约审车</view>
+    </view>
+    <view class="li" bindtap="cancel">
+      <view class="ico">
+        <image src="../../images/baoyang.png"></image>
+      </view>
+      <view class="text">预约保养</view>
+    </view>
+    <view class="li" bindtap="cancel">
+      <view class="ico">
+        <image src="../../images/zuche.png"></image>
+      </view>
+      <view class="text">租车服务</view>
+    </view>
+    <view class="li" bindtap="cancel">
+      <view class="ico">
+        <image src="../../images/baoxian.png"></image>
+      </view>
+      <view class="text">保险服务</view>
+    </view>
+  </view>
+</view>
+
+<!-- 滚动资讯 -->
+<view class="scroll-news">
+  <view class="scroll-newsTitle">头条资讯</view>
+  <view class="scroll-newsContent">
+    <swiper indicator-dots="{{false}}" autoplay="true" circular="true" vertical="true">
+      <block wx:for="{{scrollText}}" wx:key="*this">
+        <swiper-item wx:key="*this">
+          <navigator>
+            <text class="hot">热门</text>
+            <text>{{item}}</text>
+          </navigator>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+</view>
+
+<view class="zyc hotcars">
+    <view class="hotcarsTitle">
+        <view class="item">自营车</view>
+        <view class="item">
+            <navigator url="../recomendlist/recomendlist">查看更多</navigator>
+        </view>
+    </view>
+
+
+    <view class="zyc_content">
+        <view class="ul">
+        <block wx:for="{{recomendList}}">
+            <view class="li">
+                <navigator url="../recomendcarshow/recomendcarshow?id={{item.id}}">
+                    <view class="pic">
+                        <image src="{{press256pic}}/{{item.carAppearanceImgs}}" mode="widthFix"></image>
+                    </view>
+                    <view class="text">
+                        <view class="h3">{{item.title}}</view>
+                        <view class="data">行驶{{item.carMileage}}公里</view>
+                        <view class="price">
+                            <text class="carprice">￥{{item.carPrice}}</text>
+                        </view>
+                    </view>
+                </navigator>
+            </view>
+            </block>
+        </view>
+    </view>
+</view>
+
+<!-- 热门车辆 -->
+<view class="hotcars">
+  <view class="hotcarsTitle">
+    <view class="item">热门车型</view>
+    <view class="item">
+
+      <view class="location">
+        <picker bindchange="bindPickerChange" value="{{index}}" range="{{areaName}}">
+          <image src="../../images/location.png"></image>
+          <view class="text">{{areaName[index]}}</view>
+        </picker>
+      </view>
+    </view>
+  </view>
+
+  <view class="hotcarsContent">
+    <view class="ul">
+      <block wx:for="{{hotCarList}}">
+        <view class="li" data-id="{{item.carid}}">
+          <navigator url="../carshow/carshow?id={{item.carid}}">
+            <view class="img">
+              <image src="{{press256pic}}/{{item.imgName}}" mode="widthFix"></image>
+              <view class="cias" wx:if="{{item.isaccred=='1'}}">CIAS认证</view>
+            </view>
+            <view class="text">
+              <view class="h3">{{item.title}}</view>
+              <view class="data">{{item.firstDate}}上牌|行驶{{item.meter}}万公里|{{item.standarnd}}</view>
+              <view class="price">
+                <!-- <text class="del">指导价:270.8万</text> -->
+                <text class="carprice">￥{{item.price}}万</text>
+              </view>
+            </view>
+          </navigator>
+        </view>
+      </block>
+    </view>
+  </view>
+
+  <view class="flex fix_nav_wp">
+    <block wx:for="{{navData}}">
+      <template is="FooterNav" data="{{...item}}" />
+    </block>
+  </view>
+
+
+  <view class="more" bindtap="moreCar">
+    <navigator>查看更多</navigator>
+  </view>
+
+</view>
