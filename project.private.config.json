@@ -111,6 +111,19 @@
         {
           "name": "质检报告",
           "pathName": "pages/report/report",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "车辆来源-商家",
+          "pathName": "pages/Merchantlist/Merchantlist",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "车辆来源-个人",
+          "pathName": "pages/personallist/personallist",
+          "query": "",
           "scene": null
         }
       ]

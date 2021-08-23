@@ -98,12 +98,16 @@
             <text class="item left">预售价格(万元)</text>
             <input type="text" class="item right" placeholder="未填写" />
         </view>
-        <view class="li">
-            <text class="item left">车辆来源</text>
+        <view class="li carfrom">
+            <text class="item left">车辆来源 <text></text></text>
             <view class="item right">
-                <radio-group>
-                    <label class="radio"><radio value="r1" color="#ff7300"  checked="true"/>个人</label>
-                    <label class="radio"><radio value="r2" color="#ff7300" />商家</label>
+                <radio-group class="radiogroup">
+                  <navigator url="/pages/personallist/personallist">
+                      <label class="radio"><radio value="r1" color="#ff7300" />个人</label>
+                    </navigator>
+                    <navigator url="/pages/Merchantlist/Merchantlist">
+                      <label class="radio"><radio value="r2" color="#ff7300" />商家</label>
+                    </navigator>
                 </radio-group>
             </view>
         </view>

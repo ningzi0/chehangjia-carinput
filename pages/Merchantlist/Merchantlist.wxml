@@ -1,0 +1,73 @@
+<view class="Merchantlist">
+    <view class="Text_info">
+        <label>
+            <input type="text" placeholder="商家名称" />
+        </label>
+        <label>
+            <input type="number" placeholder="商家电话" />
+        </label>
+
+        <button hover-class="active">创建</button>
+    </view>
+
+
+
+    <view class="me_List">
+        <view class="meListTitle">商家列表</view>
+        <view class="ul">
+            <block wx:for="{{list}}">
+                <view class="li" hover-class="active">
+                    <text class="num">No.{{item.num}}</text>
+                    <text class="name">{{item.name}}</text>
+                    <text class="tel">{{item.tel}}</text>
+                    <text class="edit">编辑</text>
+                </view>
+            </block>
+        </view>
+    </view>
+</view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

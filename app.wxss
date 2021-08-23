@@ -352,6 +352,63 @@
 }
 
 
+/* 车辆来源----商家 */
+/* pages/Merchantlist/Merchantlist.wxss */
+.Text_info {
+  padding: 10rpx;
+  font-size: 30rpx;
+}
+.Text_info input{
+  padding: 20rpx;
+  border-bottom: 1px solid #eee;
+}
+.Text_info button{
+  margin: 15rpx ;
+  width: 100% !important;
+  background: #f76503;
+  color: #fff;
+  transition: 0.4s;
+}
+.Text_info button.active{
+  opacity: 0.8;
+}
+
+
+.me_List{
+  text-align: center;
+  margin: 20rpx 0;
+}
+.meListTitle{
+  padding: 20rpx 0;
+  background: #eee;
+}
+
+.me_List .ul .li{
+  padding: 20rpx 0;
+  display: flex;
+  font-size: 28rpx;
+  border-bottom: 1px solid #eee;
+}
+.me_List .ul .li.active{
+  background: #f9f9f9;
+}
+
+
+.me_List .ul .li text{
+  flex: 1;
+  text-align: left;
+  padding-left: 20rpx;
+}
+.me_List .ul .li text.num{
+  color: #999;
+}
+.me_List .ul .li text.edit{
+  text-align: right;
+  padding-right:20rpx ;
+  color: #f76503;
+}
+
+
 
 
 

@@ -27,6 +27,8 @@
     "pages/carinput_list/carinput_list",
     "pages/Invoicing/Invoicing",
     "pages/report/report",
+    "pages/Merchantlist/Merchantlist",
+    "pages/personallist/personallist",
     "pages/test/test"
     
   ],
